@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.34928.147
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopPOS", "CoffeeShopPOS\CoffeeShopPOS.csproj", "{6892B9C5-4D4C-4D88-9497-92524942DC16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "POS_Repository", "POS_Repository\POS_Repository.csproj", "{ECF9C3EA-1463-429F-B010-A82195EB4875}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6892B9C5-4D4C-4D88-9497-92524942DC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6892B9C5-4D4C-4D88-9497-92524942DC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6892B9C5-4D4C-4D88-9497-92524942DC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6892B9C5-4D4C-4D88-9497-92524942DC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D1C45A31-F3DE-49D6-A4F2-F353A0D9F754}
+	EndGlobalSection
+EndGlobal
