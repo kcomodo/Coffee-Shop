@@ -9,11 +9,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\POS_Repository\POS_Repository.csproj" />
+    <PackageReference Include="MySql.Data" Version="8.4.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MySql.Data" Version="8.4.0" />
+    <ProjectReference Include="..\POS_Repository\POS_Repository.csproj" />
   </ItemGroup>
 
 </Project>
