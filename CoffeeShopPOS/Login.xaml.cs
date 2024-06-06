@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using POS_Repository;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -22,10 +23,11 @@ namespace CoffeeShopPOS
         }
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
         {
-            string username = UserNameTxt.Text;
+            string email = UserNameTxt.Text;
             string password = PasswordTxt.Text;
-            //Connect to mysql database later
-            if (username == "testing" && password == "testing")
+            Class1 class1 = new Class1();
+            bool login = class1.validateEmployeeLogin(email, password);
+            if (login)
             {
                 MessageBox.Show("Login Successful");
                 this.Hide();
