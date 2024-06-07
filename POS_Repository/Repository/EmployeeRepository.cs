@@ -1,22 +1,31 @@
 ﻿using MySql.Data.MySqlClient;
-namespace POS_Repository
+using POS_Folders.Models;
+namespace POS_Folders.Repository
 {
-    public class Class1
+    public class EmployeeRepository
     {
         public MySqlConnection _connection;
-        public Class1()
+        public EmployeeRepository()
         {
             string connectionString = "server=127.0.0.1;database=coffeeshop;userid=root;port=3307";
             _connection = new MySqlConnection(connectionString);
             _connection.Open();
         }
-        ~Class1()
+        ~EmployeeRepository()
         {
             _connection.Close();
         }
+        /*
+        Keep these in repository for employee CRUD operations
+        public void addEmployee(string email, string password)
+        public void updateEmployee(string firstname, string lastname,string email, string password)
+        public void deleteEmployee(string email)
+
+        */
+        //Put this into EmployeeServices.cs
         public bool validateEmployeeLogin(string email, string password)
         {
-            
+
             string query = "Select employee_email, employee_password from employee";
             MySqlCommand cmd = new MySqlCommand(query, _connection);
             var results = cmd.ExecuteReader();
