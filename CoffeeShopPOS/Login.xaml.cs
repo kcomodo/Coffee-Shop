@@ -1,4 +1,5 @@
-﻿using POS_Repository.Repository;
+﻿using POS_Folders.Repository;
+using POS_Folders.Services;
 using System.Runtime.InteropServices;
 using System.Security;
 using System.Text;
@@ -35,7 +36,8 @@ namespace CoffeeShopPOS
         {
             email = EmailTxt.Text;
             password = PasswordTxt.Password;
-            EmployeeRepository class1 = new EmployeeRepository();
+            IEmployeeRepository employeeRepository = new EmployeeRepository();
+            IEmployeeServices class1 = new EmployeeServices(employeeRepository);
             bool login = class1.validateEmployeeLogin(email, password);
             if (login)
             {

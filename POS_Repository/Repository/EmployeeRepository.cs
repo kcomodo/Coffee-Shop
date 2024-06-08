@@ -40,8 +40,8 @@ namespace POS_Folders.Repository
             {
                 EmployeeModel employee = new EmployeeModel();
                 employee.employee_id = reader.GetInt32("employee_id");
-                employee.employee_firstname = reader.GetString("employee_firstname");
-                employee.employee_lastname = reader.GetString("employee_lastname");
+                employee.employee_firstname = reader.GetString("first_name");
+                employee.employee_lastname = reader.GetString("last_name");
                 employee.employee_email = reader.GetString("employee_email");
                 employee.employee_password = reader.GetString("employee_password");
                 return employee;
@@ -66,10 +66,10 @@ namespace POS_Folders.Repository
         public void addEmployee(string firstname, string lastname, string email, string password)
         {
             //adjust this later
-            string query = "INSERT INTO employee (employee_fistname, employee_lastname ,employee_email, employee_password) VALUES (@employee_email, @employee_password)";
+            string query = "INSERT INTO employee (first_name, last_name ,employee_email, employee_password) VALUES (@first_name, @last_name, @employee_email, @employee_password)";
             MySqlCommand cmd = new MySqlCommand(query, _connection);
-            cmd.Parameters.AddWithValue("@employee_fistname", firstname);
-            cmd.Parameters.AddWithValue("@employee_lastname", lastname);
+            cmd.Parameters.AddWithValue("@first_name", firstname);
+            cmd.Parameters.AddWithValue("@last_name", lastname);
             cmd.Parameters.AddWithValue("@employee_email", email);
             cmd.Parameters.AddWithValue("@employee_password", password);
             cmd.ExecuteNonQuery();
@@ -77,10 +77,10 @@ namespace POS_Folders.Repository
         public void updateEmployee(string firstname, string lastname,string email, string password)
         {
             //adjust this later
-            string query = "UPDATE employee SET employee_firstname = @employee_firstname, employee_lastname = @employee_lastname, employee_email = @employee_email, employee_password = @employee_password WHERE employee_email = @employee_email";
+            string query = "UPDATE employee SET first_name = @first_name, last_name = @last_name, employee_email = @employee_email, employee_password = @employee_password WHERE employee_email = @employee_email";
             MySqlCommand cmd = new MySqlCommand(query, _connection);
-            cmd.Parameters.AddWithValue("@employee_firstname", firstname);
-            cmd.Parameters.AddWithValue("@employee_lastname", lastname);
+            cmd.Parameters.AddWithValue("@first_name", firstname);
+            cmd.Parameters.AddWithValue("@last_name", lastname);
             cmd.Parameters.AddWithValue("@employee_email", email);
             cmd.Parameters.AddWithValue("@employee_password", password);
             cmd.ExecuteNonQuery();
