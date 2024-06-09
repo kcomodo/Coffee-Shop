@@ -32,20 +32,27 @@ namespace POS_Folders.Repository
         //CRUD Operation, Create, Read, Update, Delete
         public EmployeeModel getEmployeeId(int id)
         {
+            //Create query statement to get the employee information
             string query = "SELECT * FROM employee WHERE employee_id = @employee_id";
+            //Pass the query statement to the MySqlCommand and the connection
             MySqlCommand cmd = new MySqlCommand(query, _connection);
+            //Add only the id to the query statement
             cmd.Parameters.AddWithValue("@employee_id", id);
+            //Read and execute the query statement
             MySqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
+                //Create a new object to store the information
                 EmployeeModel employee = new EmployeeModel();
                 employee.employee_id = reader.GetInt32("employee_id");
                 employee.employee_firstname = reader.GetString("first_name");
                 employee.employee_lastname = reader.GetString("last_name");
                 employee.employee_email = reader.GetString("employee_email");
                 employee.employee_password = reader.GetString("employee_password");
+                //Return object as soon as it's done
                 return employee;
             }
+            //If no information is found, return null
             return null;
         }
         public EmployeeModel getEmployeeByEmail(string email)
@@ -63,6 +70,8 @@ namespace POS_Folders.Repository
             }
             return null;
         }
+
+        //Create operation
         public void addEmployee(string firstname, string lastname, string email, string password)
         {
             //adjust this later
@@ -74,6 +83,7 @@ namespace POS_Folders.Repository
             cmd.Parameters.AddWithValue("@employee_password", password);
             cmd.ExecuteNonQuery();
         }
+        //Update operation
         public void updateEmployee(string firstname, string lastname,string email, string password)
         {
             //adjust this later
@@ -85,6 +95,7 @@ namespace POS_Folders.Repository
             cmd.Parameters.AddWithValue("@employee_password", password);
             cmd.ExecuteNonQuery();
         }
+        //Delete operation
         public void deleteEmployee(string email)
         {
             //adjust this later

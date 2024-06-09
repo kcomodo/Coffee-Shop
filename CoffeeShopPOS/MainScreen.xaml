@@ -1,4 +1,4 @@
-﻿<Window x:Class="CoffeeShopPOS.Window1"
+﻿<Window x:Class="CoffeeShopPOS.MainScreen"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         WindowStyle="None"
-        Title="Window1" Height="700" Width="1000">
+        Title="MainScreen" Height="700" Width="1000">
     <Grid Background="Transparent">
         <Border Background="#FFFFFF"
                 Panel.ZIndex="0">
