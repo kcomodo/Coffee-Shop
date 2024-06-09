@@ -27,9 +27,9 @@ namespace CoffeeShopPOS
         {
             InitializeComponent();
             EmailTxt.Text = defaultEmail;
-            EmailTxt.Foreground = Brushes.Gray;
+            EmailTxt.Foreground = Brushes.Black;
             //PasswordTxt.Password = defaultPassword;
-            PasswordTxt.Foreground = Brushes.Gray;
+            PasswordTxt.Foreground = Brushes.Black;
 
         }
         private void LoginBtn_Click(object sender, RoutedEventArgs e)
