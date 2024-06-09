@@ -11,9 +11,11 @@ namespace POS_Folders.Repository
     {
         /*
            Keep these in repository interface for employee CRUD operations
-           public void addEmployee(string email, string password)
+           public void addEmployee(string firstname, string lastname, string email, string password)
            public void updateEmployee(string firstname, string lastname,string email, string password)
            public void deleteEmployee(string email)
+           public EmployeeModel getEmployeeByEmail(string email)
+           
        */
         EmployeeModel getEmployeeId(int id);
         void addEmployee(string firstname, string lastname, string email, string password);

@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace CoffeeShopPOS
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for RegisterScreen.xaml
     /// </summary>
-    public partial class Window1 : Window
+    public partial class RegisterScreen : Window
     {
-        public Window1()
+        public RegisterScreen()
         {
             InitializeComponent();
         }

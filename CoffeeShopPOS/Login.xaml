@@ -19,9 +19,9 @@
                     <PasswordBox x:Name="PasswordTxt" FontSize="15" HorizontalAlignment="Left" GotFocus="PlaceholderTxt_GotFocus" LostFocus="PlaceholderTxt_LostFocus" VerticalAlignment="Center" Height ="35" Width ="200" Margin="270,10,0,0" VerticalContentAlignment="Center" Foreground="Black"/>
                     <TextBox x:Name="PlaceholderTxt" FontSize="15" Text="Password" Foreground="Gray" GotFocus="PlaceholderTxt_GotFocus" Height ="35" Width ="200" LostFocus="PlaceholderTxt_LostFocus" Margin="270,-35,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"/>
                     <Button x:Name="LoginBtn" Content="Login" Click ="LoginBtn_Click" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="180,30,0,0" Foreground="Black" VerticalContentAlignment="Center"/>
-                    <Image Height="50" Source="/coffee-shop-icon-2048x2048-8qjl8hx1.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-290,-210,0,0"/>
+                    <Image Height="50" Source="Images/coffee-shop-icon-2048x2048-8qjl8hx1.png" Width="50" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="-290,-210,0,0"/>
                     <TextBlock Text="Coffee Shop POS System" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-450,0,0"/>
-
+                    <Button x:Name="RegisterBtn" Content="Register" Click ="RegisterBtn_Click" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="180,10,0,0" Foreground="Black" VerticalContentAlignment="Center"/>
                 </StackPanel>
 
             </Border>

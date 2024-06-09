@@ -36,20 +36,29 @@ namespace CoffeeShopPOS
         {
             email = EmailTxt.Text;
             password = PasswordTxt.Password;
+            //Create an object for employee repository and services
+            //EmployeeServices needs an object of IEmployeeRepository
+            //Now use the interface in IEmployeeService to check the login
             IEmployeeRepository employeeRepository = new EmployeeRepository();
-            IEmployeeServices class1 = new EmployeeServices(employeeRepository);
-            bool login = class1.validateEmployeeLogin(email, password);
+            IEmployeeServices employeeServices = new EmployeeServices(employeeRepository);
+            bool login = employeeServices.validateEmployeeLogin(email, password);
             if (login)
             {
                 MessageBox.Show("Login Successful");
                 this.Hide();
-                Window1 window1 = new Window1();
-                window1.Show();
+                MainScreen mainscreen = new MainScreen();
+                mainscreen.Show();
             }
             else
             {
                 MessageBox.Show("Login Failed");
             }
+        }
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
+        {
+            this.Hide();
+            RegisterScreen register = new RegisterScreen();
+            register.Show();
         }
         private void EmailTxt_GotFocus(object sender, RoutedEventArgs e)
         {
