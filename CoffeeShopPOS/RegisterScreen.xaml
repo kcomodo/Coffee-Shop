@@ -10,9 +10,6 @@
         WindowStyle="None"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Title="RegisterScreen" Height="700" Width="1000">
-    <WindowChrome.WindowChrome>
-        <WindowChrome CaptionHeight="0"/>
-    </WindowChrome.WindowChrome>
     <Grid Margin="1">
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" Height="130" Width="1000">
             <StackPanel>
@@ -21,11 +18,14 @@
         </Border>
         <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,150,0,0" Height="530" Width="1000">
             <StackPanel>
-                <TextBox BorderThickness="3" x:Name="FirstName" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="40,60,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
-                <TextBox BorderThickness="3" x:Name="LastName" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="40,10,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
-                <TextBox BorderThickness="3" x:Name="Email" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="40,10,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
-                <TextBox BorderThickness="3" x:Name="Password" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="40,10,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
-                <TextBox BorderThickness="3" x:Name="ConfirmPassword" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="40,10,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
+                <TextBox BorderThickness="3" x:Name="FirstNameTxt" GotFocus="FirstName_GotFocus" LostFocus="FirstName_LostFocus" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="400,60,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
+                <TextBox BorderThickness="3" x:Name="LastNameTxt" GotFocus="LastName_GotFocus" LostFocus="LastName_LostFocus" FontSize="15"  HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="400,10,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
+                <TextBox BorderThickness="3" x:Name="EmailTxt" FontSize="15" GotFocus="Email_GotFocus" LostFocus="Email_LostFocus" HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="400,10,0,0" TextAlignment="Left" VerticalContentAlignment="Center" Foreground="Black"/>
+                <PasswordBox x:Name="PasswordTxt" GotFocus="PlaceholderTxt_GotFocus" LostFocus="PlaceholderTxt_LostFocus" BorderThickness="3" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="400,10,0,0" VerticalContentAlignment="Center" Foreground="Black"/>
+                <TextBox x:Name="PlaceholderTxt" FontSize="15" Text="Password" Foreground="Black" GotFocus="PlaceholderTxt_GotFocus" Height ="35" Width ="200" LostFocus="PlaceholderTxt_LostFocus" Margin="400,-35,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"/>
+                <PasswordBox x:Name="ConfirmPasswordTxt" GotFocus="PlaceholderTxt_GotFocus2" LostFocus="PlaceholderTxt_LostFocus2" BorderThickness="3" FontSize="15" HorizontalAlignment="Left" VerticalAlignment="Center" Height ="35" Width ="200" Margin="400,10,0,0" VerticalContentAlignment="Center" Foreground="Black"/>
+                <TextBox x:Name="PlaceholderTxt2" FontSize="15" Text="Confirm Password" Foreground="Black" GotFocus="PlaceholderTxt_GotFocus2" Height ="35" Width ="200" LostFocus="PlaceholderTxt_LostFocus2" Margin="400,-35,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" VerticalContentAlignment="Center"/>
+                <Button x:Name="RegisterBtn" Content="Create Account" Click ="registerAccountBtn_Click" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,30,0,0" Foreground="Black" VerticalContentAlignment="Center"/>
             </StackPanel>
         </Border>
         <Border x:Name="Window_Edge"
