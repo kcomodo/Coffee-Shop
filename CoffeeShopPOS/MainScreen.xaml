@@ -14,14 +14,16 @@
     <Grid Background="Transparent">
         <Border Background="#FFFFFF"
                 Panel.ZIndex="0">
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,0,50" Height="200" Width="450">
+            <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,22,30" Height="200" Width="300">
                 <StackPanel>
                     <TextBlock Text="Tax" Width ="450" FontSize="24" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0,30,0,0"/>
-                    <Button Content="Pay" Width ="450" Height ="120" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,17,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#3890c8" Foreground="White"/>
+                    <Button Content="Pay" Width ="300" Height ="120" FontSize="30" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,17,0,0" HorizontalContentAlignment="Left" VerticalContentAlignment="Center" Background="#3890c8" Foreground="White"/>
                 </StackPanel>
-
             </Border>
-            
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" Height="700" Width="100">
+        </Border>
+        <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,20,20,0" Height="445" Width="300">
         </Border>
         <Border x:Name="Window_Edge"
                 HorizontalAlignment="Stretch"
