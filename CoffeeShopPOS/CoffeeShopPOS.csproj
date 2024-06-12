@@ -11,6 +11,7 @@
   <ItemGroup>
     <None Remove="Images\coffee-cup.png" />
     <None Remove="Images\coffee-shop-icon-2048x2048-8qjl8hx1.png" />
+    <None Remove="Images\coffeeImages\cappuccino.jpg" />
     <None Remove="Images\coffeeLogo.png" />
     <None Remove="Images\gear.png" />
     <None Remove="Images\menu.png" />
@@ -32,6 +33,7 @@
   <ItemGroup>
     <Resource Include="Images\coffee-cup.png" />
     <Resource Include="Images\coffee-shop-icon-2048x2048-8qjl8hx1.png" />
+    <Resource Include="Images\coffeeImages\cappuccino.jpg" />
     <Resource Include="Images\coffeeLogo.png" />
     <Resource Include="Images\gear.png" />
     <Resource Include="Images\menu.png" />
