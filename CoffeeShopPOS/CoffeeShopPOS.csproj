@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Images\coffee-cup.png" />
     <None Remove="Images\coffee-shop-icon-2048x2048-8qjl8hx1.png" />
+    <None Remove="Images\coffeeLogo.png" />
+    <None Remove="Images\gear.png" />
+    <None Remove="Images\menu.png" />
+    <None Remove="Images\newhome.png" />
+    <None Remove="Images\sandwich.png" />
+    <None Remove="Images\snack.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,7 +30,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Images\coffee-cup.png" />
     <Resource Include="Images\coffee-shop-icon-2048x2048-8qjl8hx1.png" />
+    <Resource Include="Images\coffeeLogo.png" />
+    <Resource Include="Images\gear.png" />
+    <Resource Include="Images\menu.png" />
+    <Resource Include="Images\newhome.png" />
+    <Resource Include="Images\sandwich.png" />
+    <Resource Include="Images\snack.png" />
   </ItemGroup>
 
 </Project>

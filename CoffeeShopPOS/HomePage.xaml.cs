@@ -10,28 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CoffeeShopPOS
 {
     /// <summary>
-    /// Interaction logic for Window1.xaml
+    /// Interaction logic for HomePage.xaml
     /// </summary>
-    public partial class MainScreen : Window
+    public partial class HomePage : Page
     {
-        public MainScreen()
+        public HomePage()
         {
             InitializeComponent();
         }
-        private void DisplayMessage(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Clicked.");
-            this.Hide();
-        }
-        private void HomeButton_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Navigate(new HomePage());
-        }
-
     }
 }
