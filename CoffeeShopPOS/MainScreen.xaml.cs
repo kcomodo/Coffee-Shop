@@ -32,6 +32,30 @@ namespace CoffeeShopPOS
         {
             MainFrame.Navigate(new HomePage());
         }
+        private void CoffeeButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new CoffeePage());
+        }
+        private void SnacksButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new SnacksPage());
+        }
+        private void SandwichButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Navigate(new SandwichPage());
+        }
+        private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonClose.Visibility = Visibility.Visible;
+            ButtonOpen.Visibility = Visibility.Collapsed;
+        }
+
+        private void ButtonCloseMenu_Click(object sender, RoutedEventArgs e)
+        {
+            ButtonClose.Visibility = Visibility.Collapsed;
+            ButtonOpen.Visibility = Visibility.Visible;
+        }
+
 
     }
 }
