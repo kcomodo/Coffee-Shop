@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_Folders.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,9 +21,18 @@ namespace CoffeeShopPOS
     /// </summary>
     public partial class CoffeePage : Page
     {
-        public CoffeePage()
+        ItemModel ItemModel;
+        public CoffeePage(ItemModel IM)
         {
             InitializeComponent();
+            this.ItemModel = IM;
         }
+        public void buttonClicked(object sender, RoutedEventArgs e)
+        {
+            MainScreen mainScreen = new MainScreen();
+            mainScreen.AddToCart("Coffee", 2.50m, 2);
+           
+        }
+
     }
 }

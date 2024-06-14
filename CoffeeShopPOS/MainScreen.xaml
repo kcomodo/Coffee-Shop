@@ -9,7 +9,12 @@
         WindowStyle="None"
         Title="MainScreen" Height="700" Width="1000">
     <Window.Resources>
+      <!--
+      Open Menu amd Close Menu will need a storyboard to animate the menu.
+      Use a double animation key frame to animate the width of the menu and to target the gridmenu
+      -->
         <Storyboard x:Key="OpenMenu">
+          
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
                 <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
@@ -22,6 +27,10 @@
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
     </Window.Resources>
+  <!--
+  Have a window trigger that triggers an event when the button is clicked.
+  When the button is clicked, reference the event to the storyboard
+  -->
     <Window.Triggers>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="ButtonOpen">
             <BeginStoryboard Storyboard="{StaticResource OpenMenu}"/>
@@ -49,13 +58,32 @@
                BorderBrush="#242424"
                BorderThickness="20,20,20,20"
                Panel.ZIndex="1">
-            <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Height="445" Width="300">
+            <Border BorderBrush="Black" BorderThickness="3" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="0,0,0,0" Height="445" Width="300"
+                    >
+                <DataGrid ItemsSource="{Binding DataGridItems}" AutoGenerateColumns="False" x:Name="cart" Margin="0,0,0,0"
+                    Height="440"
+                Width="290"
+                >
+                <DataGrid.Columns>
+                  <DataGridTextColumn Header="Name" Binding="{Binding Name}"/>
+                  <DataGridTextColumn Header="Price" Binding="{Binding Price}"/>
+                  <DataGridTextColumn Header="Quantity" Binding="{Binding Quantity}"/>
+                  
+                </DataGrid.Columns>
+              </DataGrid>
+              
             </Border>
         </Border>
 
         <Button x:Name="ButtonOpen" Click="ButtonOpenMenu_Click" Background="Transparent" Width="50" Height="50" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-770,23,0,0">
             <Image Source="Images/menu.png" Height="30" Width="30" />
         </Button>
+      <!--
+      First create a grid that holds the menu items.
+      Create a stack panel inside the grid to hold more content
+      Have a listview inside the stack panel to compact the buttons and images
+      
+      -->
         <Grid 
             x:Name="GridMenu" Width="250" Height="655" HorizontalAlignment="Left"
             Margin="20,0,0,0" Panel.ZIndex="1">
@@ -116,7 +144,39 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="580" Width="580" Margin="-230,60,0,0">
 
                 <StackPanel>
-                    <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
+                  <Button
+                    Height="150"
+                    Width="100"
+                      Click="LatteClicked"
+                      HorizontalAlignment="Left"
+                      VerticalAlignment="Top"
+                      >
+                        <StackPanel>
+                            <Image Source="Images/coffeeImages/latte.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+                                
+                            </Image>
+                            <TextBlock Text="Latte" FontSize="25" HorizontalAlignment="Center">
+                                
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+                    <Button
+                      Height="150"
+                      Width="100"
+                        Click="LatteClicked"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        >
+                        <StackPanel>
+                            <Image Source="Images/coffeeImages/cappuccino.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                            </Image>
+                            <TextBlock Text="Latte" FontSize="25" HorizontalAlignment="Center">
+
+                            </TextBlock>
+                        </StackPanel>
+                    </Button>
+
                 </StackPanel>
             </ScrollViewer>
         </Grid>
