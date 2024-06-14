@@ -155,7 +155,7 @@
                             <Image Source="Images/coffeeImages/latte.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
                                 
                             </Image>
-                            <TextBlock Text="Latte" FontSize="25" HorizontalAlignment="Center">
+                            <TextBlock Text="Latte" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
                                 
                             </TextBlock>
                         </StackPanel>
@@ -171,12 +171,29 @@
                             <Image Source="Images/coffeeImages/cappuccino.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
 
                             </Image>
-                            <TextBlock Text="Latte" FontSize="25" HorizontalAlignment="Center">
+                            <TextBlock Text="Capppuccino" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
 
                             </TextBlock>
+                          
                         </StackPanel>
                     </Button>
+                  <Button
+                                      Height="150"
+                                      Width="100"
+                                        Click="LatteClicked"
+                                        HorizontalAlignment="Left"
+                                        VerticalAlignment="Top"
+                        >
+                    <StackPanel>
+                      <Image Source="Images/coffeeImages/macchiato.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
 
+                      </Image>
+                      <TextBlock Text="Macchiato" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                      </TextBlock>
+
+                    </StackPanel>
+                  </Button>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
