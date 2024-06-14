@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Dynamic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -11,7 +14,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
+using POS_Folders.Models;
+using ZstdSharp.Unsafe;
 namespace CoffeeShopPOS
 {
     /// <summary>
@@ -19,9 +23,12 @@ namespace CoffeeShopPOS
     /// </summary>
     public partial class MainScreen : Window
     {
+        public ItemModel ItemModel { get; set; }
         public MainScreen()
         {
             InitializeComponent();
+            ItemModel = new ItemModel();
+            this.DataContext = ItemModel;
         }
         private void DisplayMessage(object sender, RoutedEventArgs e)
         {
@@ -30,19 +37,23 @@ namespace CoffeeShopPOS
         }
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new HomePage());
+           
         }
         private void CoffeeButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new CoffeePage());
+ 
+        }
+        private void LatteClicked(object sender, RoutedEventArgs e)
+        {
+            AddToCart("Latte", 3.99m, 1);
         }
         private void SnacksButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new SnacksPage());
+           
         }
         private void SandwichButton_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Navigate(new SandwichPage());
+            
         }
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
@@ -56,6 +67,18 @@ namespace CoffeeShopPOS
             ButtonOpen.Visibility = Visibility.Visible;
         }
 
+        public void AddToCart(string itemName, decimal price, int quantity)
+        { 
+            var newItem = new DataGridItem
+            {
+                Name = itemName,
+                Price = price.ToString("C"), // Currency format
+                Quantity = quantity.ToString()
+            };
+
+            ItemModel.DataGridItems.Add(newItem);
+            this.DataContext = ItemModel;
+        }
 
     }
 }
