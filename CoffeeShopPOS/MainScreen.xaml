@@ -144,56 +144,168 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="580" Width="580" Margin="-230,60,0,0">
 
                 <StackPanel>
-                  <Button
-                    Height="150"
-                    Width="100"
-                      Click="LatteClicked"
-                      HorizontalAlignment="Left"
-                      VerticalAlignment="Top"
-                      >
-                        <StackPanel>
-                            <Image Source="Images/coffeeImages/latte.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
-                                
-                            </Image>
-                            <TextBlock Text="Latte" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
-                                
-                            </TextBlock>
-                        </StackPanel>
-                    </Button>
+                  <StackPanel x:Name="CoffeeMenu" Visibility="Collapsed">
                     <Button
                       Height="150"
                       Width="100"
                         Click="LatteClicked"
                         HorizontalAlignment="Left"
                         VerticalAlignment="Top"
-                        >
-                        <StackPanel>
-                            <Image Source="Images/coffeeImages/cappuccino.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+                        Margin="0,0,0,0"
+                      >
+                      <StackPanel>
+                        <Image Source="Images/coffeeImages/latte.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+ 
+                        </Image>
+                        <TextBlock Text="Latte" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
 
-                            </Image>
-                            <TextBlock Text="Capppuccino" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
-
-                            </TextBlock>
-                          
-                        </StackPanel>
+                        </TextBlock>
+                      </StackPanel>
                     </Button>
-                  <Button
-                                      Height="150"
-                                      Width="100"
-                                        Click="LatteClicked"
-                                        HorizontalAlignment="Left"
-                                        VerticalAlignment="Top"
+                    <Button
+                      Height="150"
+                      Width="100"
+                        Click="LatteClicked"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Top"
+                        Margin="-250,-150,0,0"
                         >
-                    <StackPanel>
-                      <Image Source="Images/coffeeImages/macchiato.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+                      <StackPanel>
+                        <Image Source="Images/coffeeImages/cappuccino.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,0,0,0">
 
-                      </Image>
-                      <TextBlock Text="Macchiato" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+                        </Image>
+                        <TextBlock Text="Capppuccino" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
 
-                      </TextBlock>
+                        </TextBlock>
 
+                      </StackPanel>
+                    </Button>
+                    <Button
+                                        Height="150"
+                                        Width="100"
+                                          Click="LatteClicked"
+                                          HorizontalAlignment="Left"
+                                          VerticalAlignment="Top"
+                                            Margin="230,-150,0,0"
+                        >
+                      <StackPanel>
+                        <Image Source="Images/coffeeImages/macchiato.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                        </Image>
+                        <TextBlock Text="Macchiato" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                        </TextBlock>
+
+                      </StackPanel>
+                    </Button>
+                  </StackPanel>
+                  <StackPanel x:Name="SnacksMenu" Visibility="Collapsed">
+                    <Button
+                          Height="150"
+                          Width="100"
+                            Click="LatteClicked"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="-480,0,0,0"
+                      >
+                      <StackPanel>
+                        <Image Source="Images/snacksImages/string_cheese.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                        </Image>
+                        <TextBlock Text="String cheese" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                        </TextBlock>
+                      </StackPanel>
+                    </Button>
+                    <Button
+                        Height="150"
+                        Width="100"
+                          Click="LatteClicked"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Top"
+                         Margin="-250,-150,0,0"
+                      >
+                      <StackPanel>
+                        <Image Source="Images/snacksImages/shortbread_cookies.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                        </Image>
+                        <TextBlock Text="Shortbread Cookies" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                        </TextBlock>
+                      </StackPanel>
+                    </Button>
+                    <Button
+                        Height="150"
+                        Width="100"
+                          Click="LatteClicked"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Top"
+                        Margin="-30,-150,0,0"
+                      >
+                      <StackPanel>
+                        <Image Source="Images/snacksImages/madeleine.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                        </Image>
+                        <TextBlock Text="String cheese" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                        </TextBlock>
+                      </StackPanel>
+                    </Button>
+                  </StackPanel>
+                  <StackPanel x:Name="SandwichMenu" Visibility="Collapsed">
+                        <Button
+                          Height="150"
+                          Width="100"
+                            Click="LatteClicked"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="-480,0,0,0"
+                      >
+                            <StackPanel>
+                                <Image Source="Images/sandwichImages/club_sandwich.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                                </Image>
+                                <TextBlock Text="Club Sandwich" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button
+                          Height="150"
+                          Width="100"
+                            Click="LatteClicked"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="-250,-150,0,0"
+                      >
+                            <StackPanel>
+                                <Image Source="Images/sandwichImages/egg_sandwich.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                                </Image>
+                                <TextBlock Text="Egg Sandwich" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
+                        <Button
+                          Height="150"
+                          Width="100"
+                            Click="LatteClicked"
+                            HorizontalAlignment="Center"
+                            VerticalAlignment="Top"
+                            Margin="-20,-150,0,0"
+                      >
+                            <StackPanel>
+                                <Image Source="Images/sandwichImages/submarine_sandwich.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
+
+                                </Image>
+                                <TextBlock Text="Submarine Sandwich" TextTrimming="WordEllipsis" TextWrapping="NoWrap" FontSize="15" HorizontalAlignment="Center">
+
+                                </TextBlock>
+                            </StackPanel>
+                        </Button>
                     </StackPanel>
-                  </Button>
+                  
                 </StackPanel>
             </ScrollViewer>
         </Grid>
