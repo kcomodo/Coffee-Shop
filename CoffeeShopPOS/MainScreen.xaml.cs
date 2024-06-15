@@ -41,7 +41,9 @@ namespace CoffeeShopPOS
         }
         private void CoffeeButton_Click(object sender, RoutedEventArgs e)
         {
- 
+            CoffeeMenu.Visibility = Visibility.Visible;
+            SnacksMenu.Visibility = Visibility.Collapsed;
+            SandwichMenu.Visibility = Visibility.Collapsed;
         }
         private void LatteClicked(object sender, RoutedEventArgs e)
         {
@@ -49,11 +51,15 @@ namespace CoffeeShopPOS
         }
         private void SnacksButton_Click(object sender, RoutedEventArgs e)
         {
-           
+           SnacksMenu.Visibility = Visibility.Visible;
+           CoffeeMenu.Visibility = Visibility.Collapsed;
+            SandwichMenu.Visibility = Visibility.Collapsed;
         }
         private void SandwichButton_Click(object sender, RoutedEventArgs e)
         {
-            
+            SnacksMenu.Visibility = Visibility.Collapsed;
+            CoffeeMenu.Visibility = Visibility.Collapsed;
+            SandwichMenu.Visibility = Visibility.Visible;
         }
         private void ButtonOpenMenu_Click(object sender, RoutedEventArgs e)
         {
