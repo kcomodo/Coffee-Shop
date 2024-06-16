@@ -8,13 +8,14 @@ namespace POS_Folders.Models
 {
     public class CustomerModel
     {
-        public int ID { get; set; }
-        public string CustomerName { get; set; }
-        public string CustomerAddress { get; set; }
-        public string CustomerPhone { get; set; }
-        public string CustomerEmail { get; set; }
-        public string CustomerGender { get; set; }
-        public string CustomerDOB { get; set; }
+        public int customer_id { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string customer_email { get; set; }
+        public int phone_number { get; set; }
+        public string reward_points { get; set; }
+        public int orderItem_id { get; set; }
+        public string customer_password { get; set; }
 
     }
 }
