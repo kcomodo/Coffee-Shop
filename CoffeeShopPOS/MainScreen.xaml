@@ -17,7 +17,7 @@
           
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(FrameworkElement.Width)" Storyboard.TargetName="GridMenu">
                 <EasingDoubleKeyFrame KeyTime="0" Value="70"/>
-                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="250"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="210"/>
             </DoubleAnimationUsingKeyFrames>
         </Storyboard>
         <Storyboard x:Key="CloseMenu">
@@ -43,6 +43,7 @@
         <WindowChrome CaptionHeight="0"/>
     </WindowChrome.WindowChrome>
     <Grid x:Name="GridBackground" Background="White">
+      
         <Border Background="#FFFFFF"
         Panel.ZIndex="0">
 
@@ -85,7 +86,7 @@
       
       -->
         <Grid 
-            x:Name="GridMenu" Width="250" Height="655" HorizontalAlignment="Left"
+            x:Name="GridMenu" Width="210" Height="655" HorizontalAlignment="Left"
             Margin="20,0,0,0" Panel.ZIndex="1">
             <StackPanel Background="Gray">
                 <Image Height="140" Source="/Images/coffeeLogo.png">
@@ -101,34 +102,34 @@
 
                         </Style>
                     </ListView.Style>
-                    <Button Height="45" Click="HomeButton_Click" BorderThickness="1" Background="Transparent" Width="236">
+                    <Button Height="45" Click="HomeButton_Click" BorderThickness="1" Background="Transparent" Width="190">
                         <StackPanel Orientation="Horizontal" CanVerticallyScroll="False" >
                             <Image Source="Images/newhome.png"  Margin ="-90,0,0,0" Height="30" Width="55"/>
                             <TextBlock Text="Home" FontSize="24"  Margin="0,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Height="45" Click="CoffeeButton_Click" BorderThickness="1" Background="Transparent" Width="236">
+                    <Button Height="45" Click="CoffeeButton_Click" BorderThickness="1" Background="Transparent" Width="190">
                         <StackPanel Orientation="Horizontal" >
                             <Image Source="Images/coffee-cup.png" Height="30" Margin ="-90,0,0,0" Width="55"/>
                             <TextBlock Text="Coffee" FontSize="24" Margin="0,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Height="45" Click="SnacksButton_Click" BorderThickness="1" Background="Transparent" Width="236">
+                    <Button Height="45" Click="SnacksButton_Click" BorderThickness="1" Background="Transparent" Width="190">
                         <StackPanel Orientation="Horizontal" >
                             <Image Source="Images/snack.png" Height="30" Margin ="-90,0,0,0" Width="55"/>
                             <TextBlock Text="Snacks" FontSize="24" Margin="0,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Height="45" Click="SandwichButton_Click" BorderThickness="1" Background="Transparent" Width="236">
+                    <Button Height="45" Click="SandwichButton_Click" BorderThickness="1" Background="Transparent" Width="190">
                         <StackPanel Orientation="Horizontal" >
-                            <Image Source="Images/sandwich.png" Height="30" Margin ="-60,0,0,0" Width="55"/>
-                            <TextBlock Text="Sandwich" FontSize="24" Margin="0,0,0,0"/>
+                            <Image Source="Images/sandwich.png" Height="30" Margin ="-40,0,0,0" Width="55"/>
+                            <TextBlock Text="Sandwich" FontSize="24" Margin="15,0,0,0"/>
                         </StackPanel>
                     </Button>
-                    <Button Height="45" BorderThickness="1" Background="Transparent" Width="236">
+                    <Button Height="45" BorderThickness="1" Click="settingsButton_Click" Background="Transparent" Width="190">
                         <StackPanel Orientation="Horizontal" >
-                            <Image Source="Images/gear.png" Height="30" Margin ="-70,0,0,0" Width="55"/>
-                            <TextBlock Text="Settting" FontSize="24" Margin="0,0,0,0"/>
+                            <Image Source="Images/gear.png" Height="30" Margin ="-60,0,0,0" Width="55"/>
+                            <TextBlock Text="Settting" FontSize="24" Margin="10,0,0,0"/>
                         </StackPanel>
                     </Button>
                 </ListView>
@@ -144,7 +145,7 @@
             <ScrollViewer VerticalScrollBarVisibility="Auto" Height="580" Width="580" Margin="-230,60,0,0">
 
                 <StackPanel>
-                  <StackPanel x:Name="CoffeeMenu" Visibility="Collapsed">
+                  <StackPanel x:Name="CoffeeMenu" Visibility="Visible">
                     <Button
                       Height="150"
                       Width="100"
@@ -165,7 +166,7 @@
                     <Button
                       Height="150"
                       Width="100"
-                        Click="LatteClicked"
+                        Click="CappuccinoClicked"
                         HorizontalAlignment="Center"
                         VerticalAlignment="Top"
                         Margin="-250,-150,0,0"
@@ -181,12 +182,12 @@
                       </StackPanel>
                     </Button>
                     <Button
-                                        Height="150"
-                                        Width="100"
-                                          Click="LatteClicked"
-                                          HorizontalAlignment="Left"
-                                          VerticalAlignment="Top"
-                                            Margin="230,-150,0,0"
+                           Height="150"
+                           Width="100"
+                           Click="macchiatoClicked"
+                           HorizontalAlignment="Left"
+                           VerticalAlignment="Top"
+                           Margin="230,-150,0,0"
                         >
                       <StackPanel>
                         <Image Source="Images/coffeeImages/macchiato.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
@@ -199,11 +200,11 @@
                       </StackPanel>
                     </Button>
                   </StackPanel>
-                  <StackPanel x:Name="SnacksMenu" Visibility="Collapsed">
+                  <StackPanel x:Name="SnacksMenu" Visibility="Visible">
                     <Button
                           Height="150"
                           Width="100"
-                            Click="LatteClicked"
+                            Click="string_cheeseClicked"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
                             Margin="-480,0,0,0"
@@ -220,7 +221,7 @@
                     <Button
                         Height="150"
                         Width="100"
-                          Click="LatteClicked"
+                          Click="shortbreadClicked"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Top"
                          Margin="-250,-150,0,0"
@@ -237,10 +238,10 @@
                     <Button
                         Height="150"
                         Width="100"
-                          Click="LatteClicked"
+                          Click="madeleineClicked"
                           HorizontalAlignment="Center"
                           VerticalAlignment="Top"
-                        Margin="-30,-150,0,0"
+                        Margin="-20,-150,0,0"
                       >
                       <StackPanel>
                         <Image Source="Images/snacksImages/madeleine.jpg" Width="100" Height="100" Stretch="Fill" Margin="0,-13,0,0">
@@ -252,11 +253,11 @@
                       </StackPanel>
                     </Button>
                   </StackPanel>
-                  <StackPanel x:Name="SandwichMenu" Visibility="Collapsed">
+                  <StackPanel x:Name="SandwichMenu" Visibility="Visible">
                         <Button
                           Height="150"
                           Width="100"
-                            Click="LatteClicked"
+                            Click="clubSandwichClicked"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
                             Margin="-480,0,0,0"
@@ -273,7 +274,7 @@
                         <Button
                           Height="150"
                           Width="100"
-                            Click="LatteClicked"
+                            Click="eggSandwichClicked"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
                             Margin="-250,-150,0,0"
@@ -290,7 +291,7 @@
                         <Button
                           Height="150"
                           Width="100"
-                            Click="LatteClicked"
+                            Click="submarineSandwichClicked"
                             HorizontalAlignment="Center"
                             VerticalAlignment="Top"
                             Margin="-20,-150,0,0"
@@ -305,7 +306,13 @@
                             </StackPanel>
                         </Button>
                     </StackPanel>
-                  
+                  <StackPanel x:Name="SettingMenu" Visibility="Collapsed">
+                        <TextBox x:Name="firstNameTextBox" Height="50" Width="200" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="First Name" FontSize="20" TextAlignment="Center"/>
+                        <TextBox x:Name="lastNameTextBox" Height="50" Width="200" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Last Name" FontSize="20" TextAlignment="Center"/>
+                        <TextBox x:Name="emailTextBox" Height="50" Width="200" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Email" FontSize="20" TextAlignment="Center"/>
+                        <TextBox x:Name="passwordTextBox" Height="50" Width="200" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Text="Password" FontSize="20" TextAlignment="Center"/>
+                        <Button x:Name="updateButton" Click="updateEmployeeInformation" Height="50" Width="200" Margin="0,0,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Content="Update" FontSize="20"/>
+                    </StackPanel>
                 </StackPanel>
             </ScrollViewer>
         </Grid>
