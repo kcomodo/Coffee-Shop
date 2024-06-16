@@ -84,15 +84,16 @@ namespace POS_Folders.Repository
             cmd.ExecuteNonQuery();
         }
         //Update operation
-        public void updateEmployee(string firstname, string lastname,string email, string password)
+        public void updateEmployee(string firstname, string lastname,string email, string password, string target)
         {
             //adjust this later
-            string query = "UPDATE employee SET first_name = @first_name, last_name = @last_name, employee_email = @employee_email, employee_password = @employee_password WHERE employee_email = @employee_email";
-            MySqlCommand cmd = new MySqlCommand(query, _connection);
+            string query = "UPDATE employee SET first_name = @first_name, last_name = @last_name, employee_email = @employee_email, employee_password = @employee_password WHERE employee_email = @target_email";
+            MySqlCommand cmd  = new MySqlCommand(query, _connection);
             cmd.Parameters.AddWithValue("@first_name", firstname);
             cmd.Parameters.AddWithValue("@last_name", lastname);
             cmd.Parameters.AddWithValue("@employee_email", email);
             cmd.Parameters.AddWithValue("@employee_password", password);
+            cmd.Parameters.AddWithValue("@target_email", target);
             cmd.ExecuteNonQuery();
         }
         //Delete operation

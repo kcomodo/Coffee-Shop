@@ -26,6 +26,7 @@ namespace CoffeeShopPOS
     public partial class MainScreen : Window
     {
         public ItemModel ItemModel { get; set; }
+        public static string target;
         public MainScreen()
         {
             InitializeComponent();
@@ -34,8 +35,6 @@ namespace CoffeeShopPOS
         }
         private void DisplayMessage(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Clicked.");
-            this.Hide();
         }
         private void HomeButton_Click(object sender, RoutedEventArgs e)
         {
@@ -122,12 +121,15 @@ namespace CoffeeShopPOS
         }
         private void updateEmployeeInformation(object sender, RoutedEventArgs e)
         {
+            
+            
             IEmployeeRepository employeeRepository = new EmployeeRepository();
             string firstname = firstNameTextBox.Text;
             string lastName = lastNameTextBox.Text;
             string email = emailTextBox.Text;
             string password = passwordTextBox.Text;
-            employeeRepository.updateEmployee(firstname, lastName, email, password);
+            employeeRepository.updateEmployee(firstname, lastName, email, password, target);
+            MessageBox.Show("Employee Information Updated");
         }
         public void AddToCart(string itemName, decimal price, int quantity)
         { 
