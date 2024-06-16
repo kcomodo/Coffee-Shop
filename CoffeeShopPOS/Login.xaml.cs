@@ -45,8 +45,10 @@ namespace CoffeeShopPOS
             if (login)
             {
                 MessageBox.Show("Login Successful");
+                
                 this.Hide();
                 MainScreen mainscreen = new MainScreen();
+                MainScreen.target = email;
                 mainscreen.Show();
             }
             else

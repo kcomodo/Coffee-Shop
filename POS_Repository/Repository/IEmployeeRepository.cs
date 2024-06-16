@@ -20,7 +20,7 @@ namespace POS_Folders.Repository
         EmployeeModel getEmployeeId(int id);
         void addEmployee(string firstname, string lastname, string email, string password);
         EmployeeModel getEmployeeByEmail(string email);
-        void updateEmployee(string firstname, string lastname, string email, string password);
+        void updateEmployee(string firstname, string lastname, string email, string password, string target);
         void deleteEmployee(string email);
     }
 }
