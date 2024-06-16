@@ -19,7 +19,13 @@
     <None Remove="Images\menu.png" />
     <None Remove="Images\newhome.png" />
     <None Remove="Images\sandwich.png" />
+    <None Remove="Images\sandwichImages\club_sandwich.jpg" />
+    <None Remove="Images\sandwichImages\egg_sandwich.jpg" />
+    <None Remove="Images\sandwichImages\submarine_sandwich.jpg" />
     <None Remove="Images\snack.png" />
+    <None Remove="Images\snacksImages\madeleine.jpg" />
+    <None Remove="Images\snacksImages\shortbread_cookies.jpg" />
+    <None Remove="Images\snacksImages\string_cheese.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,7 +49,13 @@
     <Resource Include="Images\menu.png" />
     <Resource Include="Images\newhome.png" />
     <Resource Include="Images\sandwich.png" />
+    <Resource Include="Images\sandwichImages\club_sandwich.jpg" />
+    <Resource Include="Images\sandwichImages\egg_sandwich.jpg" />
+    <Resource Include="Images\sandwichImages\submarine_sandwich.jpg" />
     <Resource Include="Images\snack.png" />
+    <Resource Include="Images\snacksImages\madeleine.jpg" />
+    <Resource Include="Images\snacksImages\shortbread_cookies.jpg" />
+    <Resource Include="Images\snacksImages\string_cheese.jpg" />
   </ItemGroup>
 
 </Project>
