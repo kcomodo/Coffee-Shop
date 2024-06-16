@@ -5,7 +5,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 namespace POS_Folders.Repository
 {
     public class CustomerRepository : ICustomerRepository
@@ -21,7 +20,7 @@ namespace POS_Folders.Repository
         {
             _connection.Close();
         }
-        private readonly List<CustomerModel> _customers = new List<CustomerModel>();
+        public readonly List<CustomerModel> _customers = new List<CustomerModel>();
         public CustomerModel getCustomerByEmail(string email)
         {
             string query = "SELECT * FROM customer WHERE customer_email = @customer_email";

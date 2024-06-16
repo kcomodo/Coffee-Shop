@@ -1,3 +1,5 @@
+using Microsoft.Extensions.DependencyInjection;
+using MySql.Data.MySqlClient; // Import MySQL packages as needed
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

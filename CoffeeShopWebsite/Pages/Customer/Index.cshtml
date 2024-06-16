@@ -1,6 +1,20 @@
 ﻿@page
-@model CoffeeShopWebsite.Pages.Customer.IndexModel
+@model POS_Folders.Repository.ICustomerRepository
+@inject POS_Folders.Repository.ICustomerRepository CustomerRepository // Inject the repository interface
 @{
     ViewData["Title"] = "Customer";
 }
 <h1>Customer</h1>
+<div class="Text-Block">
+        <p>Customer information</p>
+        @{
+            var customer = CustomerRepository.getCustomerByEmail("QuangHo@gmail.com");
+        }
+        <p>Customer ID: @customer.customer_id</p>
+        <p>Customer First Name: @customer.first_name</p>
+        <p>Customer Last Name: @customer.last_name</p>
+        <p>Customer Email: @customer.customer_email</p>
+        <p>Customer Password: @customer.customer_password</p>
+
+
+</div>
