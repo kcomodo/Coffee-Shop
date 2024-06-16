@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+
 builder.Services.AddDbContext<CoffeeShopWebsiteContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("CoffeeShopWebsiteContext") ?? throw new InvalidOperationException("Connection string 'CoffeeShopWebsiteContext' not found.")));
 

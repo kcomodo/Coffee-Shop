@@ -9,11 +9,12 @@ namespace CoffeeShopWebsite.Data
 {
     public class CoffeeShopWebsiteContext : DbContext
     {
+        
         public CoffeeShopWebsiteContext (DbContextOptions<CoffeeShopWebsiteContext> options)
             : base(options)
         {
         }
-
+        
         public DbSet<POS_Folders.Models.CustomerModel> CustomerModel { get; set; } = default!;
     }
 }
