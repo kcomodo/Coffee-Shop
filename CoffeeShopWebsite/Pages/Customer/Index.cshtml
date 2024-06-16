@@ -1,6 +1,6 @@
 ﻿@page
-@model POS_Folders.Repository.ICustomerRepository
-@inject POS_Folders.Repository.ICustomerRepository CustomerRepository // Inject the repository interface
+@model POS_Folders.Repository.CustomerRepository
+@inject POS_Folders.Repository.ICustomerRepository icustomerrepository
 @{
     ViewData["Title"] = "Customer";
 }
@@ -8,7 +8,7 @@
 <div class="Text-Block">
         <p>Customer information</p>
         @{
-            var customer = CustomerRepository.getCustomerByEmail("QuangHo@gmail.com");
+            var customer = icustomerrepository.getCustomerByEmail("QuangHo@gmail.com");
         }
         <p>Customer ID: @customer.customer_id</p>
         <p>Customer First Name: @customer.first_name</p>

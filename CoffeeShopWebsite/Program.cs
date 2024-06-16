@@ -1,10 +1,11 @@
 using Microsoft.Extensions.DependencyInjection;
-using MySql.Data.MySqlClient; // Import MySQL packages as needed
+using MySql.Data.MySqlClient;
+using POS_Folders.Repository; // Import MySQL packages as needed
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
-
+builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
