@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopPOS", "CoffeeShop
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS_Folders", "POS_Repository\POS_Folders.csproj", "{ECF9C3EA-1463-429F-B010-A82195EB4875}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoffeeShopWebsite", "CoffeeShopWebsite\CoffeeShopWebsite.csproj", "{33BC9636-B767-4352-BEBC-EC05AC63CDAD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopWebsiteAngular.Server", "CoffeeShopWebsiteAngular\CoffeeShopWebsiteAngular.Server\CoffeeShopWebsiteAngular.Server.csproj", "{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ECF9C3EA-1463-429F-B010-A82195EB4875}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33BC9636-B767-4352-BEBC-EC05AC63CDAD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33BC9636-B767-4352-BEBC-EC05AC63CDAD}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33BC9636-B767-4352-BEBC-EC05AC63CDAD}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33BC9636-B767-4352-BEBC-EC05AC63CDAD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
