@@ -7,11 +7,23 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\**" />
+    <Content Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\POS_Repository\POS_Folders.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="CoffeeShopFrontEnd\src\app\models\" />
+    <Folder Include="CoffeeShopFrontEnd\src\app\services\" />
   </ItemGroup>
 
 </Project>
