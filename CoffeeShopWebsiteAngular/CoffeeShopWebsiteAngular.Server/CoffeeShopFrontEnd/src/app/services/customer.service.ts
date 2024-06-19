@@ -6,7 +6,7 @@ import { CustomerModel } from '../models/customer.model.model'; // Ensure this f
   providedIn: 'root'
 })
 export class CustomerService {
-  private apiUrl = 'https://localhost:5001/api/customer'; // Adjust the URL as needed
+  private apiUrl = 'https://localhost:5097/api/customer'; // Adjust the URL as needed
 
   constructor(private http: HttpClient) { }
 
