@@ -7,9 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="CoffeeShopFrontEnd\**" />
     <Compile Remove="Services\**" />
+    <Content Remove="CoffeeShopFrontEnd\**" />
     <Content Remove="Services\**" />
+    <EmbeddedResource Remove="CoffeeShopFrontEnd\**" />
     <EmbeddedResource Remove="Services\**" />
+    <None Remove="CoffeeShopFrontEnd\**" />
     <None Remove="Services\**" />
   </ItemGroup>
 
@@ -19,11 +23,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\POS_Repository\POS_Folders.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CoffeeShopFrontEnd\src\app\models\" />
-    <Folder Include="CoffeeShopFrontEnd\src\app\services\" />
   </ItemGroup>
 
 </Project>
