@@ -1,4 +1,5 @@
 using POS_Folders.Repository;
+using POS_Folders.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -9,6 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<ICustomerRepository, CustomerRepository>();
+builder.Services.AddScoped<ICustomerServices, CustomerServices>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
