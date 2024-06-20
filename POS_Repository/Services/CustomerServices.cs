@@ -13,15 +13,17 @@ namespace POS_Folders.Services
         private readonly ICustomerRepository _customerRepository;
         public CustomerServices(ICustomerRepository customerRepository)
         {
-            //If employeeRepository object is null, throw an exception
-            _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(customerRepository));
+
+            _customerRepository = customerRepository;
         }
         public bool validateCustomerLogin(string email, string password)
         {
-            //get employee email list first then check if email and password match
-            //employee object will store the employee information as a list
+ 
             CustomerModel customer = _customerRepository.getCustomerByEmail(email);
-            //If the email and passwrod that the user enter matches with the database then send true, else false
+            if (customer == null)
+            {
+                return false;
+            }
             if (email == customer.customer_email && password == customer.customer_password)
             { return true; }
             return false;

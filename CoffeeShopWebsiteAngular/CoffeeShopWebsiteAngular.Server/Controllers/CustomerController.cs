@@ -26,21 +26,13 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
         public IActionResult GetCustomerByEmail(string email)
         {
             var customer = _customerRepository.getCustomerByEmail(email);
-            if (customer == null)
-            {
-                return NotFound();
-            }
             return Ok(customer);
         }
         [HttpPost("ValidateLogin")]
-        public IActionResult ValidateLogin([FromBody] LoginRequest loginRequest)
+        public IActionResult ValidateLogin(string email, string password)
         {
-            var customer = _customerServices.validateCustomerLogin(loginRequest.Email, loginRequest.Password);
-            if (customer == null)
-            {
-                return Unauthorized("Invalid email or password");
-            }
-            return Ok(customer);
+            bool isValid = _customerServices.validateCustomerLogin(email, password);
+            return Ok(isValid);
         }
     }
 }

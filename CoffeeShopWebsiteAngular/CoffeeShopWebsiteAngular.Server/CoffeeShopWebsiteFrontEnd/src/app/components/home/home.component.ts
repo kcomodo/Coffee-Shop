@@ -10,18 +10,6 @@ export class HomeComponent {
 
   constructor(private customerService: AuthService) { }
 
-  ngOnInit(): void {
-    this.getCustomer('QuangHo@gmail.com'); // Replace with actual email
-  }
 
-  getCustomer(email: string): void {
-    this.customerService.getCustomerByEmail(email).subscribe(
-      (data) => {
-        this.customer = data;
-      },
-      (error) => {
-        console.error('Error fetching customer:', error);
-      }
-    );
-  }
+
 }
