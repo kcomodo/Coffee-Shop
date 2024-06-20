@@ -9,6 +9,11 @@ import { HomeComponent } from './components/home/home.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,8 +27,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatSlideToggleModule,
     MatInputModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatButtonModule,
+    MatDividerModule,
+    MatIconModule
   ],
+  
   providers: [
     provideClientHydration(),
     provideAnimationsAsync()

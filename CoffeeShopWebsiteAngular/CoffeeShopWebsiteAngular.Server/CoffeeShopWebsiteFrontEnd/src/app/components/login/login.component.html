@@ -1,11 +1,39 @@
 <form class="example-form">
-  <mat-form-field class="example-full-width">
-    <mat-label>Favorite food</mat-label>
-    <input matInput placeholder="Ex. Pizza" value="Sushi">
-  </mat-form-field>
+  <mat-card class="LoginCard" appearance="outlined">
+    <mat-card header="login" appearance="outlined">
+      <div class="emailDiv">
+        <mat-card-content>Email</mat-card-content>
+        <input type="email"
+               placeholder="Type your email"
+               name="emailInput"
+               matInput [formControl]="emailFormControl">
+        @if (emailFormControl.hasError('email') && !emailFormControl.hasError('required')) {
+        <mat-error>Please enter a valid email address</mat-error>
+        }
+        @if (emailFormControl.hasError('required')) {
+        <mat-error>Email is required</mat-error>
+        }
+      </div>
+      <div class="passwordDiv">
+        <mat-card-content>Password</mat-card-content>
+        <input type="Password"
+               placeholder="Type your password"
+               name="passwordInput"
+               matInput [formControl]="passwordFormControl">
+        @if (passwordFormControl.hasError('required')) {
+            <mat-error>Password is required</mat-error>
+        }
+        
 
-  <mat-form-field class="example-full-width">
-    <mat-label>Leave a comment</mat-label>
-    <textarea matInput placeholder="Ex. It makes me feel..."></textarea>
-  </mat-form-field>
+      </div>
+      <div class="Login Button">
+        <button mat-stroked-button>Login</button>
+      </div>
+      <div class="RegisterButton">
+        <a mat-stroked-button routerLink="/register">Register</a>
+      </div>
+    </mat-card>
+  </mat-card>
+
+
 </form>
