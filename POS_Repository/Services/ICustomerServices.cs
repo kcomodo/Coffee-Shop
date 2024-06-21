@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace POS_Folders.Services
 {
-    internal class ICustomerServices
+    public interface ICustomerServices
     {
+        bool validateCustomerLogin(string email, string password);
     }
 }
