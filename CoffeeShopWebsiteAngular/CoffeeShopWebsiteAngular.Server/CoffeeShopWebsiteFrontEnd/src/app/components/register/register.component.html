@@ -1,1 +1,52 @@
-<p>register works!</p>
+
+<form class="register-form">
+  <mat-card class="registerCard" appearance="outlined">
+    <mat-card-content>
+      <div class="firstNameDiv">
+        <mat-form-field appearance="fill">
+          <mat-label>First Name</mat-label>
+          <input type="text"
+                 placeholder="First Name"
+                 name="firstNameInput">
+
+        </mat-form-field>
+      </div>
+      <div class="lastNameDiv">
+        <mat-form-field appearance="fill">
+          <mat-label>Last Name</mat-label>
+          <input type="text"
+                 placeholder="Last Name"
+                 name="lastNameInput">
+        </mat-form-field>
+      </div>
+      <div class="emailDiv">
+        <mat-form-field appearance="fill">
+          <mat-label>Email</mat-label>
+          <input type="email"
+                 placeholder="Email"
+                 name="emailInput">
+        </mat-form-field>
+      </div>
+      <div class="phoneNumberDiv">
+        <mat-form-field appearance="fill">
+          <mat-label>Phone Number</mat-label>
+          <input type="number"
+                 placeholder="Phone Number"
+                 name="phoneNumberInput">
+        </mat-form-field>
+      </div>
+      <div class="passwordDiv">
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password"
+                 placeholder="Type your password"
+                 name="passwordInput">
+
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" type="submit">Register</button>
+    </mat-card-actions>
+  </mat-card>
+</form>

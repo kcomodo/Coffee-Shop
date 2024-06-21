@@ -1,5 +1,16 @@
-<div *ngIf="customer">
-  <h1>Customer Details</h1>
-  <p>Email: {{ customer.email }}</p>
-  <!-- Add other customer fields as needed -->
-</div>
+  <nav class="navbar">
+    <ul class="navbar-list">
+      <a mat-button routerLink="">Menu</a>
+      <a mat-button routerLink="/login">Promotions</a>
+      <a mat-button routerLink="/login">Contact</a>
+    </ul>
+    <div class="contact-info">
+      <a mat-button routerLink="/login">Order Online</a>
+      <a mat-button routerLink="/login">Phone Number</a>
+    </div>
+  </nav>
+  <div class="loginButton">
+    <mat-card-actions>
+      <button mat-raised-button routerLink="/login" class="color-button">Login</button>
+    </mat-card-actions>
+  </div>

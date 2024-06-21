@@ -25,7 +25,7 @@ export class LoginComponent {
         console.log(this.email, this.password);
         // Handle successful login, e.g., redirect to dashboard
         if (response == true) {
-          this.router.navigate(['home']);
+          this.router.navigate(['customer-info']);
         }
         
       },

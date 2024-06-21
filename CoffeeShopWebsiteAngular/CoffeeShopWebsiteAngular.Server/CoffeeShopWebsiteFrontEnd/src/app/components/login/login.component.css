@@ -1,7 +1,31 @@
-.LoginCard {
-  max-width: 400px;
+.example-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.example-full-width {
+.LoginCard {
+  width: 300px;
+  text-align: center;
+}
+
+.emailDiv, .passwordDiv {
+  margin-bottom: 20px;
+}
+
+mat-form-field {
   width: 100%;
+}
+
+.mat-card-actions {
+  justify-content: center;
+  margin-top: 20px;
+
+}
+
+button {
+  min-width: 100px;
+  text-align:center;
+  margin:25px;
 }
