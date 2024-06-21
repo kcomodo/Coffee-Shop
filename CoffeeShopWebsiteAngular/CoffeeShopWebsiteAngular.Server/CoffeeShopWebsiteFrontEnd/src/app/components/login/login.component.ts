@@ -18,19 +18,22 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router) { }
   onLogin(): void {
+    console.log(this.email, this.password);
     this.authService.validateLogin(this.email, this.password).subscribe(
       (response) => {
-        console.log('True', response);
+        console.log(response);
+        console.log(this.email, this.password);
         // Handle successful login, e.g., redirect to dashboard
-        this.router.navigate(['home']);
+        if (response == true) {
+          this.router.navigate(['home']);
+        }
+        
       },
       (error) => {
         console.error('Login failed', error);
         // Handle login error, e.g., display error message
-        alert('Invalid email or password');
-        console.error("email typed in", this.email);
-        console.error("password typed in", this.password);
-        console.error("email from control", error);
+
+
       }
     );
   }

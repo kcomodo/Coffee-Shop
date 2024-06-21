@@ -20,12 +20,11 @@ namespace POS_Folders.Services
         {
  
             CustomerModel customer = _customerRepository.getCustomerByEmail(email);
-            if (customer == null)
-            {
-                return false;
-            }
+
             if (email == customer.customer_email && password == customer.customer_password)
-            { return true; }
+            { 
+                return true; 
+            }
             return false;
         }
     }

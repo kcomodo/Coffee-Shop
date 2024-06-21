@@ -5,10 +5,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiUrl = 'https://localhost:7059';
+  private baseUrl = 'https://localhost:7059';
   constructor(private http: HttpClient) { }
 
-  validateLogin(email: string, password: string): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/ValidateLogin`, { email, password });
+  validateLogin(email: string, password: string):Observable<any>{
+    const body = { email: email, password: password };
+    return this.http.post<any>(`${this.baseUrl}/ValidateLogin?email=${email}&password=${password}`, body);
+
   }
 }
