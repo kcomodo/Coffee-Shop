@@ -1,3 +1,5 @@
+//app.module.ts is the root module of the application. It is the first file that is executed when the application is started.
+//you can import all modules and components in here, which will be shared across the application.
 import { NgModule } from '@angular/core';
 import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
@@ -18,6 +20,7 @@ import { CustomerInfoComponent } from './components/customer-info/customer-info.
 import { RegisterComponent} from './components/register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 
+//under declaration, just insert the components so the router can navigate to them
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +29,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     HomeComponent,
     CustomerInfoComponent,
   ],
+  //import just shares all the modules across the application to other components
   imports: [
     BrowserModule,
     AppRoutingModule,

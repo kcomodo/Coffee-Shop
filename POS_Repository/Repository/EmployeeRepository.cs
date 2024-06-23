@@ -55,6 +55,17 @@ namespace POS_Folders.Repository
             //If no information is found, return null
             return null;
         }
+        public void deleteEmployeebyEmail(string email)
+        {
+            //Create query statement to delete the employee information
+            string query = "DELETE FROM employee WHERE employee_email = @employee_email";
+            //Pass the query statement to the MySqlCommand and the connection
+            MySqlCommand cmd = new MySqlCommand(query, _connection);
+            //Add only the email to the query statement
+            cmd.Parameters.AddWithValue("@employee_email", email);
+            //Execute the query statement
+            cmd.ExecuteNonQuery();
+        }
         public EmployeeModel getEmployeeByEmail(string email)
         {
             string query = "SELECT * FROM employee WHERE employee_email = @employee_email";

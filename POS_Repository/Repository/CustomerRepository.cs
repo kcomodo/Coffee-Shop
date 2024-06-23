@@ -55,5 +55,12 @@ namespace POS_Folders.Repository
             cmd.ExecuteNonQuery();
 
         }
+        public void deleteCustomerByEmail(string email)
+        {
+            string query = "DELETE FROM customer WHERE customer_email = @customer_email";
+            MySqlCommand cmd = new MySqlCommand(query, _connection);
+            cmd.Parameters.AddWithValue("@customer_email", email);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
