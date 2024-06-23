@@ -7,9 +7,10 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
     //Create a new controller for customer
     //Call the repository
     //Call the CRUD operations
- 
+
     public class CustomerController : Controller
     {
+
         //call the repository and services
         private readonly ICustomerRepository _customerRepository;
         private readonly ICustomerServices _customerServices;
@@ -47,6 +48,12 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
         public IActionResult DeleteCustomer(string email)
         {
             _customerRepository.deleteCustomerByEmail(email);
+            return Ok();
+        }
+        [HttpPut("UpdateCustomer")]
+        public IActionResult UpdateCustomer(string firstname, string lastname, string email, string phone, string password)
+        {
+            _customerRepository.updateCustomerByEmail(firstname, lastname, email, phone, password);
             return Ok();
         }
     }

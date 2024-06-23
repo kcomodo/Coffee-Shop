@@ -19,5 +19,6 @@ namespace POS_Folders.Repository
         CustomerModel getCustomerByEmail(string email);
         void addCustomer(string firstname, string lastname, string email, string phone, string password);
         void deleteCustomerByEmail(string email);
+        void updateCustomerByEmail(string firstname, string lastname, string email, string phone, string password);
     }
 }

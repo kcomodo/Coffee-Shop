@@ -62,5 +62,16 @@ namespace POS_Folders.Repository
             cmd.Parameters.AddWithValue("@customer_email", email);
             cmd.ExecuteNonQuery();
         }
+        public void updateCustomerByEmail(string firstname, string lastname, string email, string phone, string password)
+        {
+            string query = "UPDATE customer SET first_name = @first_name, last_name = @last_name, phone_number = @phone_number, customer_password = @customer_password WHERE customer_email = @customer_email";
+            MySqlCommand cmd = new MySqlCommand(query, _connection);
+            cmd.Parameters.AddWithValue("@first_name", firstname);
+            cmd.Parameters.AddWithValue("@last_name", lastname);
+            cmd.Parameters.AddWithValue("@customer_email", email);
+            cmd.Parameters.AddWithValue("@phone_number", phone);
+            cmd.Parameters.AddWithValue("@customer_password", password);
+            cmd.ExecuteNonQuery();
+        }
     }
 }
