@@ -34,6 +34,12 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             bool isValid = _customerServices.validateCustomerLogin(email, password);
             return Ok(isValid);
         }
+        [HttpPost("RegisterCustomer")]
+        public IActionResult RegisterCustomer(string firstname, string lastname, string email, string phone, string password)
+        {
+            _customerRepository.addCustomer(firstname, lastname, email, phone, password);
+            return Ok();
+        }
     }
 }
 
