@@ -5,9 +5,12 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthService {
+  //default url for the api which is swagger
   private baseUrl = 'https://localhost:7059';
   constructor(private http: HttpClient) { }
-
+  //Call the controller methods from asp.net
+  //Put a body in here because angular does not like having less than 2 parameters
+  //https://localhost:7059/ValidateLogin?email=testing%40gmail.com&password=testing12345
   validateLogin(email: string, password: string):Observable<any>{
     const body = { email: email, password: password };
     return this.http.post<any>(`${this.baseUrl}/ValidateLogin?email=${email}&password=${password}`, body);
