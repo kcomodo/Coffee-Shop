@@ -1,46 +1,56 @@
-
-<form class="register-form">
+<form class="register-form" (ngSubmit)="onRegister()">
   <mat-card class="registerCard" appearance="outlined">
     <mat-card-content>
       <div class="firstNameDiv">
         <mat-form-field appearance="fill">
           <mat-label>First Name</mat-label>
-          <input type="text"
+          <input matInput
+                 type="text"
                  placeholder="First Name"
-                 name="firstNameInput">
-
+                 name="firstNameInput"
+                 [(ngModel)]="firstname">
         </mat-form-field>
       </div>
       <div class="lastNameDiv">
         <mat-form-field appearance="fill">
           <mat-label>Last Name</mat-label>
-          <input type="text"
+          <input matInput
+                 type="text"
                  placeholder="Last Name"
-                 name="lastNameInput">
+                 name="lastNameInput"
+                 [(ngModel)]="lastname">
         </mat-form-field>
       </div>
       <div class="emailDiv">
         <mat-form-field appearance="fill">
           <mat-label>Email</mat-label>
-          <input type="email"
+          <input matInput
+                 type="email"
                  placeholder="Email"
-                 name="emailInput">
+                 name="emailInput"
+                 [(ngModel)]="email">
+          <!-- Include your form control validation here if necessary -->
         </mat-form-field>
       </div>
       <div class="phoneNumberDiv">
         <mat-form-field appearance="fill">
           <mat-label>Phone Number</mat-label>
-          <input type="number"
+          <input matInput
+                 type="text"
                  placeholder="Phone Number"
-                 name="phoneNumberInput">
+                 name="phoneNumberInput"
+                 [(ngModel)]="phone">
+     
         </mat-form-field>
       </div>
       <div class="passwordDiv">
         <mat-form-field appearance="fill">
           <mat-label>Password</mat-label>
-          <input type="password"
+          <input matInput
+                 type="password"
                  placeholder="Type your password"
-                 name="passwordInput">
+                 name="passwordInput"
+                 [(ngModel)]="password">
 
         </mat-form-field>
       </div>

@@ -11,7 +11,7 @@ namespace POS_Folders.Models
         public string first_name { get; set; }
         public string last_name { get; set; }
         public string customer_email { get; set; }
-        public int phone_number { get; set; }
+        public string phone_number { get; set; }
         public string reward_points { get; set; }
         public int orderItem_id { get; set; }
         public string customer_password { get; set; }
