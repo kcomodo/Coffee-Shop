@@ -22,6 +22,6 @@ namespace POS_Folders.Repository
         EmployeeModel getEmployeeByEmail(string email);
         void updateEmployee(string firstname, string lastname, string email, string password, string target);
         void deleteEmployeebyEmail(string email);
-        void deleteEmployee(string email);
+
     }
 }
