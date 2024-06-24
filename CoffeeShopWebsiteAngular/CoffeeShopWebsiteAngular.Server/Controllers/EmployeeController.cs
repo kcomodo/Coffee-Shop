@@ -24,5 +24,35 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             var employee = _employeeRepository.getEmployeeByEmail(email);
             return Ok(employee);
         }
+        [HttpGet("GetEmployeeById")]
+        public IActionResult GetEmployeeById(int id)
+        {
+            var employee = _employeeRepository.getEmployeeId(id);
+            return Ok(employee);
+        }
+        [HttpPost("updateEmployee")]
+        public IActionResult updateEmployee(string firstname, string lastname, string email, string password, string target)
+        {
+            _employeeRepository.updateEmployee(firstname, lastname, email, password, target);
+            return Ok();
+        }
+        [HttpDelete("DeleteEmployee")]
+        public IActionResult DeleteEmployee(string email)
+        {
+            _employeeRepository.deleteEmployeebyEmail(email);
+            return Ok();
+        }
+        [HttpPost("AddEmployee")]
+        public IActionResult AddEmployee(string firstname, string lastname, string email, string password)
+        {
+            _employeeRepository.addEmployee(firstname, lastname, email, password);
+            return Ok();
+        }
+        [HttpPost("ValidateLogin")]
+        public IActionResult ValidateLogin(string email, string password)
+        {
+            bool isValid = _employeeServices.validateEmployeeLogin(email, password);
+            return Ok(isValid);
+        }
     }
 }

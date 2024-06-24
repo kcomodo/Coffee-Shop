@@ -107,15 +107,6 @@ namespace POS_Folders.Repository
             cmd.Parameters.AddWithValue("@target_email", target);
             cmd.ExecuteNonQuery();
         }
-        //Delete operation
-        public void deleteEmployee(string email)
-        {
-            //adjust this later
-            string query = "DELETE FROM employee WHERE employee_email = @employee_email";
-            MySqlCommand cmd = new MySqlCommand(query, _connection);
-            cmd.Parameters.AddWithValue("@employee_email", email);
-            cmd.ExecuteNonQuery();
-        }
 
     }
 }
