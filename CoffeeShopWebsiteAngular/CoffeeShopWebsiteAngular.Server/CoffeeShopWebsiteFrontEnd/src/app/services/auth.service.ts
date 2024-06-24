@@ -13,7 +13,7 @@ export class AuthService {
   //https://localhost:7059/ValidateLogin?email=testing%40gmail.com&password=testing12345
   validateLogin(email: string, password: string):Observable<any>{
     const body = { email: email, password: password };
-    return this.http.post<any>(`${this.baseUrl}/ValidateLogin?email=${email}&password=${password}`, body);
+    return this.http.post<any>(`${this.baseUrl}/CustomerValidateLogin?email=${email}&password=${password}`, body);
   }
   //https://localhost:7059/RegisterCustomer?firstname=testing&lastname=testing12345&email=testing%40gmail.com&phone=123456789&password=testing12345
   registerUser(firstname: string, lastname: string, email: string, phone: string, password: string):Observable<any>{

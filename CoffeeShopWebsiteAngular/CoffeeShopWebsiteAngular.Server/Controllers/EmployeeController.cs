@@ -18,6 +18,12 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             _employeeRepository = employeeRepository;
             _employeeServices = employeeServices;
         }
+        [HttpPost("EmployeeValidateLogin")]
+        public IActionResult ValidateLogin(string email, string password)
+        {
+            bool isValid = _employeeServices.validateEmployeeLogin(email, password);
+            return Ok(isValid);
+        }
         [HttpGet("GetEmployeeByEmail")]
         public IActionResult GetEmployeeByEmail(string email)
         {
@@ -48,11 +54,6 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             _employeeRepository.addEmployee(firstname, lastname, email, password);
             return Ok();
         }
-        [HttpPost("ValidateLogin")]
-        public IActionResult ValidateLogin(string email, string password)
-        {
-            bool isValid = _employeeServices.validateEmployeeLogin(email, password);
-            return Ok(isValid);
-        }
+
     }
 }
