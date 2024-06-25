@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CustomerInfoComponent } from './components/customer-info/customer-info.component';
 import { RegisterComponent} from './components/register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { LayoutModule } from '@angular/cdk/layout';
 
 //under declaration, just insert the components so the router can navigate to them
 @NgModule({
@@ -42,7 +43,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatDividerModule,
     MatIconModule,
     HttpClientModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    LayoutModule
   ],
   
   providers: [
