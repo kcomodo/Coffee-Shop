@@ -32,7 +32,7 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             return Ok(customer);
         }
         //service side for customers
-        [HttpPost("ValidateLogin")]
+        [HttpPost("CustomerValidateLogin")]
         public IActionResult ValidateLogin(string email, string password)
         {
             bool isValid = _customerServices.validateCustomerLogin(email, password);
