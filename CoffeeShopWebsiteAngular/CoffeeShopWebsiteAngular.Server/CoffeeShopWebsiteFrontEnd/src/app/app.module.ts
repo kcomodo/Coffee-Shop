@@ -20,6 +20,10 @@ import { CustomerInfoComponent } from './components/customer-info/customer-info.
 import { RegisterComponent} from './components/register/register.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { LayoutModule } from '@angular/cdk/layout';
+import { MenuComponent } from './components/menu/menu.component';
+import { AboutComponent } from './components/about/about.component';
+import { ContactComponent } from './components/contact/contact.component';
+import { EventsComponent } from './components/events/events.component';
 
 //under declaration, just insert the components so the router can navigate to them
 @NgModule({
@@ -29,6 +33,10 @@ import { LayoutModule } from '@angular/cdk/layout';
     RegisterComponent,
     HomeComponent,
     CustomerInfoComponent,
+    MenuComponent,
+    AboutComponent,
+    ContactComponent,
+    EventsComponent,
   ],
   //import just shares all the modules across the application to other components
   imports: [
