@@ -12,6 +12,6 @@ namespace POS_Folders.Models
         public string itemName { get; set; }
         public string category { get; set; }
         public int quantity { get; set; }
-        public int cost { get; set; }
+        public double cost { get; set; }
     }
 }
