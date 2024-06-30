@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS_Folders.Repository
 {
-    internal class OrderRepository
+    public class OrderRepository : IOrderRepository
     {
     }
 }

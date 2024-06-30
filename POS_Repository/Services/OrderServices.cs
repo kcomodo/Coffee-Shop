@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace POS_Folders.Services
 {
-    internal class OrderServices
+    public class OrderServices : IOrderServices
     {
     }
 }
