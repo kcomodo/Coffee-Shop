@@ -1,0 +1,10 @@
+#container {
+  width: 100%;
+  height: 100vh; /* Adjust the height as per your design needs */
+  background-image: url('../../../assets/images/background_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%; /* Full width of its parent */
+  height: 92.5vh; /* Full viewport height */
+}

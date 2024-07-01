@@ -1,36 +1,50 @@
 
-<form class="example-form" (ngSubmit)="onLogin()">
-  <mat-card class="LoginCard" appearance="outlined">
-    <mat-card-content>
-      <div class="emailDiv">
-        <mat-form-field appearance="fill">
-          <mat-label>Email</mat-label>
-          <input type="email"
-                 placeholder="Type your email"
-                 name="emailInput"
-                 [(ngModel)]="email"
-                 matInput
-                 [formControl]="emailFormControl">
-          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
-          <mat-error *ngIf="emailFormControl.hasError('required')">Email is required</mat-error>
-        </mat-form-field>
-      </div>
-      <div class="passwordDiv">
-        <mat-form-field appearance="fill">
-          <mat-label>Password</mat-label>
-          <input type="password"
-                 placeholder="Type your password"
-                 name="passwordInput"
-                 [(ngModel)]="password"
-                 matInput
-                 [formControl]="passwordFormControl">
-          <mat-error *ngIf="passwordFormControl.hasError('required')">Password is required</mat-error>
-        </mat-form-field>
-      </div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-raised-button color="primary" type="submit">Login</button>
-      <a mat-button color="primary" routerLink="/register">Register</a>
-    </mat-card-actions>
-  </mat-card>
-</form>
+<nav class="navbar">
+  <ul class="navbar-list">
+    <a mat-button class="color-option" routerLink="/home">Home</a>
+    <a mat-button class="color-option" routerLink="/about">About</a>
+    <a mat-button class="color-option" routerLink="/events">Events</a>
+    <a mat-button class="color-option" routerLink="/contact">Contact</a>
+    <a mat-button class="color-option" routerLink="/login">Login</a>
+  </ul>
+  <div class="contact-info">
+
+  </div>
+</nav>
+<div id="container">
+  <form class="example-form" (ngSubmit)="onLogin()">
+    <mat-card class="LoginCard" appearance="outlined">
+      <mat-card-content>
+        <div class="emailDiv">
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input type="email"
+                   placeholder="Type your email"
+                   name="emailInput"
+                   [(ngModel)]="email"
+                   matInput
+                   [formControl]="emailFormControl">
+            <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
+            <mat-error *ngIf="emailFormControl.hasError('required')">Email is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="passwordDiv">
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password"
+                   placeholder="Type your password"
+                   name="passwordInput"
+                   [(ngModel)]="password"
+                   matInput
+                   [formControl]="passwordFormControl">
+            <mat-error *ngIf="passwordFormControl.hasError('required')">Password is required</mat-error>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" type="submit">Login</button>
+        <a mat-button color="primary" routerLink="/register">Register</a>
+      </mat-card-actions>
+    </mat-card>
+  </form>
+</div>
