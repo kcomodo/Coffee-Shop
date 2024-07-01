@@ -8,7 +8,8 @@ namespace POS_Folders.Services
 {
     public interface IOrderServices
     {
-        void addOrder(int customer_id, int product_id, int quantity, string status);
+        void CustomerAddOrder(int customer_id, int product_id, int quantity, string status);
         void orderChange(int id,int quantity);
+
     }
 }

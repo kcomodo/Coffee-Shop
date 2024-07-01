@@ -11,5 +11,7 @@ namespace POS_Folders.Repository
     {
         OrderModel GetOrder(int id);
         void deleteOrder(int id);
+        void addOrder(int customer_id, int product_id, int quantity, string status);
+        void updateOrder(int id, int quantity);
     }
 }
