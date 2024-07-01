@@ -73,5 +73,6 @@ namespace POS_Folders.Repository
             cmd.Parameters.AddWithValue("@customer_password", password);
             cmd.ExecuteNonQuery();
         }
+
     }
 }

@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace POS_Folders.Services
 {
-    internal class IOrderServices
+    public interface IOrderServices
     {
+        void CustomerAddOrder(int customer_id, int product_id, int quantity, string status);
+        void orderChange(int id,int quantity);
+
     }
 }
