@@ -1,41 +1,58 @@
-.example-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+/* Navbar styles */
+.navbar {
+  position: fixed; /* Fixed position to stay at the top */
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff; /* Example background color */
+  z-index: 1000; /* Ensure it's above other content */
 }
 
-.LoginCard {
-  width: 300px;
-  text-align: center;
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
 }
+
+  .navbar-list a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #333333; /* Example text color */
+  }
+
+/* Container styles */
+#container {
+  position: relative; /* Ensure positioning context for absolute elements */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url('../../../assets/images/background_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Form styles */
+.example-form {
+  position: absolute; /* Position absolutely relative to #container */
+  top: 50%; /* Example centering vertically */
+  left: 50%; /* Example centering horizontally */
+  transform: translate(-50%, -50%);
+  max-width: 100%; /* Adjust width as needed */
+  padding: 20px;
+
+}
+
 
 .emailDiv, .passwordDiv {
   margin-bottom: 20px;
 }
 
-mat-form-field {
-  width: 100%;
-}
 
-.mat-card-actions {
-  justify-content: center;
-  margin-top: 20px;
-
-}
 
 button {
   min-width: 100px;
-  text-align:center;
-  margin:25px;
+  text-align: center;
+  margin: 15px;
 }
-#container {
-  width: 100%;
-  height: 100vh; /* Adjust the height as per your design needs */
-  background-image: url('../../../assets/images/background_image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  width: 100%; /* Full width of its parent */
-  height: 92.5vh; /* Full viewport height */
-}
+
