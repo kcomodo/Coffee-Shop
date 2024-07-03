@@ -10,11 +10,16 @@
   
 }
 .registerCard {
-  width: 20%;
-
+  width: 100%;
+  max-width: 400px; /* Adjust the width as needed */
+  margin: 20px; /* Optional: margin for breathing space */
+}
+mat-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the items horizontally */
 }
 mat-card-actions button {
-
   color: white; /* White text */
   font-size: 18px; /* Increase font size */
   padding: 10px 20px; /* Add padding */
@@ -24,3 +29,7 @@ mat-card-actions button {
     background-color: #0000B9; /* Darker green on hover */
 
   }
+mat-card-actions {
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+}
