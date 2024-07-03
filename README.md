@@ -1,3 +1,3 @@
 # CoffeeShop
-Working on a POS system for the desktop application.
-Will create a website for the coffee shop using asp.net later.
+POS System for desktop application.
+Working on website using Angular as front-end and Asp.net for backend.
