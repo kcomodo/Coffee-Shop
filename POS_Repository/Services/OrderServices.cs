@@ -14,13 +14,13 @@ namespace POS_Folders.Services
         {
             _orderRepository = orderRepository;
         }
-        public void CustomerAddOrder(int customer_id, int product_id, int quantity, string status)
+        public void CustomerAddOrder(string FirstName, string LastName, string Address, string State, string Phone, int item_id, int quantity, double unitPrice, double totalPrice)
         {
-            _orderRepository.addOrder(customer_id, product_id, quantity, status);
+            _orderRepository.addOrder(FirstName, LastName,Address,State,Phone,item_id, quantity, unitPrice, totalPrice);
         }
-        public void orderChange(int id, int quantity)
+        public void orderChange(int id, string Address, string State, string Phone, int quantity, double unitPrice, double totalPrice)
         {
-            _orderRepository.updateOrder(id, quantity);
+            _orderRepository.updateOrder(id, Address, State, Phone, quantity, unitPrice, totalPrice);
         }
     }
 }

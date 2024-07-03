@@ -25,9 +25,9 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             return Ok(order);
         }
         [HttpPost("AddOrder")]
-        public IActionResult AddOrder(int customer_id, int product_id, int quantity, string status)
+        public IActionResult AddOrder(string FirstName, string LastName, string Address, string State, string Phone, int item_id, int quantity, double unitPrice, double totalPrice)
         {
-            _orderRepository.addOrder(customer_id, product_id, quantity, status);
+            _orderRepository.addOrder(FirstName, LastName, Address, State, Phone, item_id, quantity, unitPrice, totalPrice);
             return Ok();
         }
         [HttpDelete]
@@ -37,21 +37,27 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             return Ok();
         }
         [HttpPut("UpdateOrder")]
-        public IActionResult UpdateOrder(int id, int quantity)
+        public IActionResult UpdateOrder(int id, string Address, string State, string Phone, int quantity, double unitPrice, double totalPrice)
         {
-            _orderRepository.updateOrder(id, quantity);
+            _orderRepository.updateOrder(id, Address, State, Phone, quantity, unitPrice, totalPrice);
             return Ok();
         }
         [HttpPost("CustomerAddOrder")]
-        public IActionResult CustomerAddOrder(int customer_id, int product_id, int quantity, string status)
+        public IActionResult CustomerAddOrder(string FirstName, string LastName, string Address, string State, string Phone, int item_id, int quantity, int unitPrice, int totalPrice)
         {
-            _orderServices.CustomerAddOrder(customer_id, product_id, quantity, status);
+            _orderServices.CustomerAddOrder(FirstName, LastName, Address, State, Phone, item_id, quantity, unitPrice, totalPrice);
             return Ok();
         }
         [HttpPut("CustomerOrderChange")]
-        public IActionResult CustomerOrderChange(int id, int quantity)
+        public IActionResult CustomerOrderChange(int id, string Address, string State, string Phone, int quantity, double unitPrice, double totalPrice)
         {
-            _orderServices.orderChange(id, quantity);
+            _orderServices.orderChange(id, Address, State, Phone, quantity, unitPrice, totalPrice);
+            return Ok();
+        }
+        [HttpDelete("CustomerDeleteOrder")]
+        public IActionResult CustomerDeleteOrder(int id)
+        {
+            _orderRepository.deleteOrder(id);
             return Ok();
         }
     
