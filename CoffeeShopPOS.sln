@@ -9,6 +9,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS_Folders", "POS_Reposito
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopWebsiteAngular.Server", "CoffeeShopWebsiteAngular\CoffeeShopWebsiteAngular.Server\CoffeeShopWebsiteAngular.Server.csproj", "{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest1", "UnitTest1\UnitTest1.csproj", "{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
