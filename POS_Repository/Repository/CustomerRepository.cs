@@ -1,6 +1,10 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.AspNetCore.Http.HttpResults;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Ocsp;
 using POS_Folders.Models;
 using System.Collections.Generic;
+using System.Net;
+using System.Text.RegularExpressions;
 
 namespace POS_Folders.Repository
 {
@@ -45,14 +49,26 @@ namespace POS_Folders.Repository
         }
         public void addCustomer(string firstname, string lastname,string email, string phone, string password)
         {
-            string query = "INSERT INTO customer(first_name, last_name, customer_email, phone_number, customer_password) VALUES (@first_name, @last_name, @customer_email, @phone_number, @customer_password)";
-            MySqlCommand cmd = new MySqlCommand(query, _connection);
-            cmd.Parameters.AddWithValue("@first_name", firstname);
-            cmd.Parameters.AddWithValue("@last_name", lastname);
-            cmd.Parameters.AddWithValue("@customer_email", email);
-            cmd.Parameters.AddWithValue("@phone_number", phone);
-            cmd.Parameters.AddWithValue("@customer_password", password);
-            cmd.ExecuteNonQuery();
+            
+
+            //use regex to validate email and phone number
+            Regex emailRegex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if(emailRegex.IsMatch(email))
+            {
+                string query = "INSERT INTO customer(first_name, last_name, customer_email, phone_number, customer_password) VALUES (@first_name, @last_name, @customer_email, @phone_number, @customer_password)";
+                MySqlCommand cmd = new MySqlCommand(query, _connection);
+                cmd.Parameters.AddWithValue("@first_name", firstname);
+                cmd.Parameters.AddWithValue("@last_name", lastname);
+                cmd.Parameters.AddWithValue("@customer_email", email);
+                cmd.Parameters.AddWithValue("@phone_number", phone);
+                cmd.Parameters.AddWithValue("@customer_password", password);
+                cmd.ExecuteNonQuery();
+            }
+            else
+            {
+                throw new ArgumentException("Invalid email format");
+            }
+         
 
         }
         public void deleteCustomerByEmail(string email)
