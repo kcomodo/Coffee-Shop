@@ -19,7 +19,7 @@ namespace UnitTest1
             var customer = new CustomerModel
             {
                 customer_email = "QuangHo@gmail.com",
-                customer_password = ""
+                customer_password = "12345"
             };
             mockRepository.Setup(x => x.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
             
@@ -35,10 +35,25 @@ namespace UnitTest1
             var mockRepository = new Mock<ICustomerRepository>();
             var customer = new CustomerModel
             {
-                customer_email = "Testing@gmail.com",
-                customer_password = ""
+                customer_email = "QuangHo@gmail.com",
+                customer_password = "12345"
             };
             mockRepository.Setup(x => x.getCustomerByEmail("Testing@gmail.com")).Returns(customer);
+            var mockService = new CustomerServices(mockRepository.Object);
+            var results = mockService.validateCustomerLogin(customer.customer_email, customer.customer_password);
+            Assert.False(results);
+        }
+        [Fact]  
+        public void ValidateCustomerLogin_Empty()
+        {
+            //create a mock repository, assign the customer object with values for email and password for testing
+            var mockRepository = new Mock<ICustomerRepository>();
+            var customer = new CustomerModel
+            {
+                customer_email = "QuangHo@gmail.com",
+                customer_password = ""
+            };
+            mockRepository.Setup(x => x.getCustomerByEmail("")).Returns(customer);
             var mockService = new CustomerServices(mockRepository.Object);
             var results = mockService.validateCustomerLogin(customer.customer_email, customer.customer_password);
             Assert.False(results);

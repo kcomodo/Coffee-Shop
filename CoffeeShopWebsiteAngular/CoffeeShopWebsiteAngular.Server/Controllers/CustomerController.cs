@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using POS_Folders.Repository;
 using POS_Folders.Services;
+using System.Text.RegularExpressions;
 namespace CoffeeShopWebsiteAngular.Server.Controllers
 {
     //Create a new controller for customer
@@ -41,8 +42,17 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
         [HttpPost("RegisterCustomer")]
         public IActionResult RegisterCustomer(string firstname, string lastname, string email, string phone, string password)
         {
-            _customerRepository.addCustomer(firstname, lastname, email, phone, password);
-            return Ok();
+            Regex regex = new Regex(@"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$");
+            if (!regex.IsMatch(email))
+            {
+                return BadRequest("Invalid email");
+            }
+            else
+            {
+                _customerRepository.addCustomer(firstname, lastname, email, phone, password);
+                return Ok();
+            }
+        
         }
         [HttpDelete("DeleteCustomer")]
         public IActionResult DeleteCustomer(string email)
