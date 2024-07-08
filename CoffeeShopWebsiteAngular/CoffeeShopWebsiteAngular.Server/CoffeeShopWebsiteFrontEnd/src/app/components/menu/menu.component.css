@@ -31,3 +31,6 @@
     color: #333333; /* Example text color */
   }
 
+mat-grid-tile {
+  background: lightblue;
+}
