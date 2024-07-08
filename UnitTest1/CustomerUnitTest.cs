@@ -139,6 +139,7 @@ namespace UnitTest1
         [Fact]
         public void updateCustomerByEmail_UpdatesCustomerDetails()
         {
+            //create the mock repository and fill the customer model with info
             var mockRepository = new Mock<ICustomerRepository>();
             var customer = new CustomerModel
             {
@@ -151,8 +152,10 @@ namespace UnitTest1
                 orderItem_id = 0,
                 customer_password = "12345",
             };
+
             mockRepository.Setup(repo => repo.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
 
+            //need this section to set up the new customer details by using a callback to the original argument
             mockRepository.Setup(repo => repo.updateCustomerByEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
                           .Callback<string, string, string, string, string>((firstname, lastname, email, phone, password) =>
                           {
@@ -164,7 +167,7 @@ namespace UnitTest1
                                   customer.customer_password = password;
                               }
                           });
-
+            //call the method and assign the new values to the customer object
             mockRepository.Object.updateCustomerByEmail("NewFirstName", "NewLastName", "QuangHo@gmail.com", "1234567890", "newpassword");
             var result = mockRepository.Object.getCustomerByEmail("QuangHo@gmail.com");
             Assert.Equal("NewFirstName", result.first_name);

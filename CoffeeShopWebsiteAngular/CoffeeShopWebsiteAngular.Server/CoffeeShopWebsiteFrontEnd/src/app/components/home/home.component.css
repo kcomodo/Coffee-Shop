@@ -41,9 +41,9 @@
     margin: 0 10px;
     color: #333333; /* Example text color */
   }
-
-.menuButton {
+  .menuButton {
   position: absolute;
   left: 20px; /* Example positioning */
   top:70px;
 }
+
