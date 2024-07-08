@@ -7,6 +7,8 @@ using CoffeeShopWebsiteAngular.Server.Controllers;
 using POS_Folders.Models;
 using Org.BouncyCastle.Crypto.Macs;
 using MySqlX.XDevAPI.Common;
+using Microsoft.AspNetCore.Mvc;
+using System.Net.Sockets;
 namespace UnitTest1
 {
     public class CustomerUnitTest
@@ -133,6 +135,42 @@ namespace UnitTest1
             Assert.NotEqual("", result.last_name);
             Assert.NotEqual("", result.phone_number);
 
+        }
+        [Fact]
+        public void updateCustomerByEmail_UpdatesCustomerDetails()
+        {
+            var mockRepository = new Mock<ICustomerRepository>();
+            var customer = new CustomerModel
+            {
+                customer_id = 1,
+                first_name = "Quang",
+                last_name = "Ho",
+                customer_email = "QuangHo@gmail.com",
+                phone_number = "1234567890",
+                reward_points = "0",
+                orderItem_id = 0,
+                customer_password = "12345",
+            };
+            mockRepository.Setup(repo => repo.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
+
+            mockRepository.Setup(repo => repo.updateCustomerByEmail(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                          .Callback<string, string, string, string, string>((firstname, lastname, email, phone, password) =>
+                          {
+                              if (customer.customer_email == email)
+                              {
+                                  customer.first_name = firstname;
+                                  customer.last_name = lastname;
+                                  customer.phone_number = phone;
+                                  customer.customer_password = password;
+                              }
+                          });
+
+            mockRepository.Object.updateCustomerByEmail("NewFirstName", "NewLastName", "QuangHo@gmail.com", "1234567890", "newpassword");
+            var result = mockRepository.Object.getCustomerByEmail("QuangHo@gmail.com");
+            Assert.Equal("NewFirstName", result.first_name);
+            Assert.Equal("NewLastName", result.last_name);
+            Assert.Equal("1234567890", result.phone_number);
+            Assert.Equal("newpassword", result.customer_password);
         }
     }
 }
