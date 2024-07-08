@@ -20,4 +20,10 @@ export class AuthService {
     const body = { firstname: firstname, lastname: lastname, email: email, phone: phone, password: password };
     return this.http.post<any>(`${this.baseUrl}/RegisterCustomer?firstname=${firstname}&lastname=${lastname}&email=${email}&phone=${phone}&password=${password}`, body);
   }
+
+  //https://localhost:7059/GetCustomerByEmail?email=QuangHo%40gmail.com
+  GetCustomerInfo(email: string): Observable<any> {
+    const body = {};
+    return this.http.get<any>(`${this.baseUrl}/GetCustomerByEmail?email=${email}`, body);
+  }
 }
