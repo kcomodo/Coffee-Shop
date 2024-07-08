@@ -9,68 +9,69 @@
   <div class="contact-info">
 
   </div>
-</nav>
-<div id="container">
-  <form class="register-form" (ngSubmit)="onRegister()">
-    <mat-card class="registerCard" appearance="outlined">
-      <mat-card-content>
-        <div class="firstNameDiv">
-          <mat-form-field appearance="fill">
-            <mat-label>First Name</mat-label>
-            <input matInput
-                   type="text"
-                   placeholder="First Name"
-                   name="firstNameInput"
-                   [(ngModel)]="firstname">
-          </mat-form-field>
-        </div>
-        <div class="lastNameDiv">
-          <mat-form-field appearance="fill">
-            <mat-label>Last Name</mat-label>
-            <input matInput
-                   type="text"
-                   placeholder="Last Name"
-                   name="lastNameInput"
-                   [(ngModel)]="lastname">
-          </mat-form-field>
-        </div>
-        <div class="emailDiv">
-          <mat-form-field appearance="fill">
-            <mat-label>Email</mat-label>
-            <input matInput
-                   type="email"
-                   placeholder="Email"
-                   name="emailInput"
-                   [(ngModel)]="email">
-            <!-- Include your form control validation here if necessary -->
-          </mat-form-field>
-        </div>
-        <div class="phoneNumberDiv">
-          <mat-form-field appearance="fill">
-            <mat-label>Phone Number</mat-label>
-            <input matInput
-                   type="text"
-                   placeholder="Phone Number"
-                   name="phoneNumberInput"
-                   [(ngModel)]="phone">
 
-          </mat-form-field>
-        </div>
-        <div class="passwordDiv">
-          <mat-form-field appearance="fill">
-            <mat-label>Password</mat-label>
-            <input matInput
-                   type="password"
-                   placeholder="Type your password"
-                   name="passwordInput"
-                   [(ngModel)]="password">
+  <div id="container">
+    <form class="register-form" (ngSubmit)="onRegister()">
+      <mat-card class="registerCard" appearance="outlined">
+        <mat-card-content>
+          <div class="firstNameDiv">
+            <mat-form-field appearance="fill">
+              <mat-label>First Name</mat-label>
+              <input matInput
+                     type="text"
+                     placeholder="First Name"
+                     name="firstNameInput"
+                     [(ngModel)]="firstname">
+            </mat-form-field>
+          </div>
+          <div class="lastNameDiv">
+            <mat-form-field appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input matInput
+                     type="text"
+                     placeholder="Last Name"
+                     name="lastNameInput"
+                     [(ngModel)]="lastname">
+            </mat-form-field>
+          </div>
+          <div class="emailDiv">
+            <mat-form-field appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput
+                     type="email"
+                     placeholder="Email"
+                     name="emailInput"
+                     [(ngModel)]="email">
+              <!-- Include your form control validation here if necessary -->
+            </mat-form-field>
+          </div>
+          <div class="phoneNumberDiv">
+            <mat-form-field appearance="fill">
+              <mat-label>Phone Number</mat-label>
+              <input matInput
+                     type="text"
+                     placeholder="Phone Number"
+                     name="phoneNumberInput"
+                     [(ngModel)]="phone">
 
-          </mat-form-field>
-        </div>
-      </mat-card-content>
-      <mat-card-actions>
-        <button mat-raised-button color="primary" type="submit">Register</button>
-      </mat-card-actions>
-    </mat-card>
-  </form>
+            </mat-form-field>
+          </div>
+          <div class="passwordDiv">
+            <mat-form-field appearance="fill">
+              <mat-label>Password</mat-label>
+              <input matInput
+                     type="password"
+                     placeholder="Type your password"
+                     name="passwordInput"
+                     [(ngModel)]="password">
+
+            </mat-form-field>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-raised-button color="primary" type="submit">Register</button>
+        </mat-card-actions>
+      </mat-card>
+    </form>
   </div>
+</nav>
