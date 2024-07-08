@@ -24,7 +24,7 @@ import { MenuComponent } from './components/menu/menu.component';
 import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EventsComponent } from './components/events/events.component';
-
+import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
 //under declaration, just insert the components so the router can navigate to them
 @NgModule({
   declarations: [
@@ -52,7 +52,9 @@ import { EventsComponent } from './components/events/events.component';
     MatIconModule,
     HttpClientModule,
     MatFormFieldModule,
-    LayoutModule
+    LayoutModule,
+    MatGridList,
+    MatGridListModule
   ],
   
   providers: [
