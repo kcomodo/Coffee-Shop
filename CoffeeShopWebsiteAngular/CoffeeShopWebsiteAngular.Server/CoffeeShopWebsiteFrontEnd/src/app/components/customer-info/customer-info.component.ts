@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-customer-info',
   templateUrl: './customer-info.component.html',
@@ -13,14 +14,16 @@ export class CustomerInfoComponent {
   Password: string = '';
   PhoneNumber: string = '';
   constructor(private authService: AuthService, private router: Router) {
+
     this.authService.GetCustomerInfo(this.Email).subscribe((response) => {
       console.log(response);
-      console.log(this.FirstName, this.LastName, this.Email, this.Password, this.PhoneNumber);
-      this.FirstName = response.firstName;
-      this.LastName = response.lastName;
-      this.Email = response.email;
-      this.Password = response.password;
-      this.PhoneNumber = response.phone;
+      
+      this.FirstName = response.first_name;
+      this.LastName = response.last_name
+      this.Email = response.customer_email;
+      this.Password = response.customer_password;
+      this.PhoneNumber = response.phone_number;
+  
     });
   }
 
