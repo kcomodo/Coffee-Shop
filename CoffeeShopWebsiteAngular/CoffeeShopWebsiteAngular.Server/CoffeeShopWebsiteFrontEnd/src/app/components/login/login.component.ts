@@ -3,6 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
+import { EmailServiceService } from '../../services/email-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,7 +17,7 @@ export class LoginComponent {
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
   passwordFormControl = new FormControl('', [Validators.required]);
 
-  constructor(private authService: AuthService, private router: Router) { }
+  constructor(private authService: AuthService, private router: Router, private emailService: EmailServiceService) { }
   onLogin(): void {
     console.log(this.email, this.password);
     this.authService.validateLogin(this.email, this.password).subscribe(
@@ -25,6 +26,8 @@ export class LoginComponent {
         console.log(this.email, this.password);
         // Handle successful login, e.g., redirect to dashboard
         if (response == true) {
+          this.emailService.setEmail(this.email);
+          console.log("Email saved:", this.emailService.getEmail());
           this.router.navigate(['customer-info']);
         }
         
