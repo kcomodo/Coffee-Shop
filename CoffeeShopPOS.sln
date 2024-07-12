@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "POS_Folders", "POS_Reposito
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoffeeShopWebsiteAngular.Server", "CoffeeShopWebsiteAngular\CoffeeShopWebsiteAngular.Server\CoffeeShopWebsiteAngular.Server.csproj", "{BC3FECF4-716F-48CD-83DA-C3FF118D3C7B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomerUnitTest", "UnitTest1\CustomerUnitTest.csproj", "{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTest", "UnitTest1\UnitTest.csproj", "{0F1AC2B4-BDF5-4BE9-82CD-AD7DF88EACB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
