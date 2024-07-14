@@ -30,6 +30,10 @@ namespace POS_Folders.Services
             //get employee email list first then check if email and password match
             //employee object will store the employee information as a list
             EmployeeModel employee = _employeeRepository.getEmployeeByEmail(email);
+            if (employee == null)
+            {
+                return false;
+            }
             //If the email and passwrod that the user enter matches with the database then send true, else false
             if (email == employee.employee_email && password == employee.employee_password)
             { return true; }
