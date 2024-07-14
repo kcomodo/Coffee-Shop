@@ -8,7 +8,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Moq;
 using POS_Folders.Repository;
 using POS_Folders.Services;
-using CoffeeShopWebsiteAngular.Server.Controllers;
 using POS_Folders.Models;
 using Org.BouncyCastle.Crypto.Macs;
 using MySqlX.XDevAPI.Common;
@@ -119,6 +118,43 @@ namespace CustomerUnitTest
             Assert.NotEqual("testing", results.employee_lastname);
             Assert.NotEqual("testing@gmail.com", results.employee_email);
             Assert.NotEqual("testing12345", results.employee_password);
+        }
+        [Fact]
+        public void validateEmployeeLogin_True()
+        {
+            //create a mock repository, assign the employee object with values for email and password for testing
+            var mockRepository = new Mock<IEmployeeRepository>();
+            var employee = new EmployeeModel
+            {
+                employee_id = 1,
+                employee_firstname = "test",
+                employee_lastname = "testing",
+                employee_email = "testing@gmail.com",
+                employee_password = "testing12345"
+
+            };
+            mockRepository.Setup(x => x.getEmployeeByEmail("testing@gmail.com")).Returns(employee);
+            var mockService = new EmployeeServices(mockRepository.Object);
+            var results = mockService.validateEmployeeLogin(employee.employee_email, employee.employee_password);
+            Assert.True(results);
+        }
+        [Fact]
+        public void validateEmployeeLogin_False()
+        {
+            //create a mock repository, assign the employee object with values for email and password for testing
+            var mockRepository = new Mock<IEmployeeRepository>();
+            var employee = new EmployeeModel
+            {
+                employee_id = 1,
+                employee_firstname = "test",
+                employee_lastname = "testing",
+                employee_email = "testing@gmail.com",
+                employee_password = "testing12345"
+            };
+            mockRepository.Setup(x => x.getEmployeeByEmail("wrongtesting@gmail.com")).Returns(employee);
+            var mockService = new EmployeeServices(mockRepository.Object);
+            var results = mockService.validateEmployeeLogin(employee.employee_email, employee.employee_password);
+            Assert.False(results);
         }
     }
 }

@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc.Testing;
 using Moq;
 using POS_Folders.Repository;
 using POS_Folders.Services;
-using CoffeeShopWebsiteAngular.Server.Controllers;
 using POS_Folders.Models;
 using Org.BouncyCastle.Crypto.Macs;
 using MySqlX.XDevAPI.Common;
