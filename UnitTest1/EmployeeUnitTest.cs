@@ -60,5 +60,65 @@ namespace CustomerUnitTest
             Assert.NotEqual("NotTesting@gmail.com", results.employee_email);
             Assert.NotEqual("NotTesting12345", results.employee_password);
         }
+        [Fact]
+        public void updateEmployee_True()
+        {
+            //create a mock repository, assign the employee object with values for email and password for testing
+            var mockRepository = new Mock<IEmployeeRepository>();
+            var employee = new EmployeeModel
+            {
+                employee_id = 1,
+                employee_firstname = "test",
+                employee_lastname = "testing",
+                employee_email = "testing@gmail.com",
+                employee_password = "testing12345"
+            };
+            mockRepository.Setup(repo => repo.getEmployeeByEmail("testing@gmail.com")).Returns(employee);
+            mockRepository.Setup(repo => repo.updateEmployee(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                .Callback<string, string, string, string, string>((firstname, lastname, email, password, oldemail) =>
+                {
+                    employee.employee_firstname = firstname;
+                    employee.employee_lastname = lastname;
+                    employee.employee_email = email;
+                    employee.employee_password = password;
+                });
+
+            mockRepository.Object.updateEmployee("newtest", "newtesting", "newtesting@gmail.com", "newtesting12345", "testing@gmail.com");
+            var results = mockRepository.Object.getEmployeeByEmail("testing@gmail.com");
+            Assert.Equal("newtest", results.employee_firstname);
+            Assert.Equal("newtesting", results.employee_lastname);
+            Assert.Equal("newtesting@gmail.com", results.employee_email);
+            Assert.Equal("newtesting12345", results.employee_password);
+        }
+        [Fact]
+        public void updateEmployee_False()
+        {
+            //create a mock repository, assign the employee object with values for email and password for testing
+            var mockRepository = new Mock<IEmployeeRepository>();
+            var employee = new EmployeeModel
+            {
+                employee_id = 1,
+                employee_firstname = "test",
+                employee_lastname = "testing",
+                employee_email = "testing@gmail.com",
+                employee_password = "testing12345"
+            };
+            mockRepository.Setup(repo => repo.getEmployeeByEmail("testing@gmail.com")).Returns(employee);
+            mockRepository.Setup(repo => repo.updateEmployee(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                .Callback<string, string, string, string, string>((firstname, lastname, email, password, oldemail) =>
+                {
+                    employee.employee_firstname = firstname;
+                    employee.employee_lastname = lastname;
+                    employee.employee_email = email;
+                    employee.employee_password = password;
+                });
+
+            mockRepository.Object.updateEmployee("newtest", "newtesting", "newtesting@gmail.com", "newtesting12345", "testing@gmail.com");
+            var results = mockRepository.Object.getEmployeeByEmail("testing@gmail.com");
+            Assert.NotEqual("test", results.employee_firstname);
+            Assert.NotEqual("testing", results.employee_lastname);
+            Assert.NotEqual("testing@gmail.com", results.employee_email);
+            Assert.NotEqual("testing12345", results.employee_password);
+        }
     }
 }
