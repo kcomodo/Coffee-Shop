@@ -174,5 +174,16 @@ namespace UnitTest1
             Assert.Equal("1234567890", result.phone_number);
             Assert.Equal("newpassword", result.customer_password);
         }
+        [Fact]
+        public void deleteCustomer_True()
+        {
+
+        }
+        [Fact]
+        public void deleteCustomer_False()
+        {
+
+        }
+
     }
 }
