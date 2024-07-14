@@ -17,5 +17,45 @@ namespace UnitTest
 {
     public class InventoryUnitTest
     {
+        [Fact]
+        public void getInventoryInfo_True()
+        {
+
+        }
+        [Fact]
+        public void getInventoryInfo_False()
+        {
+
+        }
+        [Fact]
+        public void addInventory_True()
+        {
+
+        }
+        [Fact]
+        public void addInventory_False()
+        {
+
+        }
+        [Fact]
+        public void updateInventory_True()
+        {
+
+        }
+        [Fact]
+        public void updateInventory_False()
+        {
+
+        }
+        [Fact]
+        public void deleteInventory_True()
+        {
+
+        }
+        [Fact]
+        public void deleteInventory_False()
+        {
+
+        }
     }
 }

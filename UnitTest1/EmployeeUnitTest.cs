@@ -156,5 +156,15 @@ namespace CustomerUnitTest
             var results = mockService.validateEmployeeLogin(employee.employee_email, employee.employee_password);
             Assert.False(results);
         }
+        [Fact]
+        public void deleteEmployeeByEmail_True()
+        {
+
+        }
+        [Fact]
+        public void deleteEmployeeByEmail_False()
+        {
+
+        }
     }
 }
