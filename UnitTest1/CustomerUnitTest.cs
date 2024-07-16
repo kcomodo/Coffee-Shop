@@ -177,10 +177,60 @@ namespace UnitTest1
         [Fact]
         public void deleteCustomer_True()
         {
+            var mockRepository = new Mock<ICustomerRepository>();
+            var customer = new CustomerModel
+            {
+                customer_id = 1,
+                first_name = "Quang",
+                last_name = "Ho",
+                customer_email = "QuangHo@gmail.com",
+                phone_number = "1234567890",
+                reward_points = "0",
+                orderItem_id = 0,
+                customer_password = "12345",
+            };
+            // Setup mock repository behavior
+            mockRepository.Setup(x => x.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
+            mockRepository.Setup(x => x.deleteCustomerByEmail("QuangHo@gmail.com"));
+            var fetchedCustomer = mockRepository.Object.getCustomerByEmail("QuangHo@gmail.com");
+            mockRepository.Object.deleteCustomerByEmail("QuangHo@gmail.com");
+
+            Assert.Null(fetchedCustomer); 
+
+            mockRepository.Verify(x => x.deleteCustomerByEmail("QuangHo@gmail.com"), Times.Once);
 
         }
         [Fact]
         public void deleteCustomer_False()
+        {
+            var mockRepository = new Mock<ICustomerRepository>();
+            var customer = new CustomerModel
+            {
+                customer_id = 1,
+                first_name = "Quang",
+                last_name = "Ho",
+                customer_email = "QuangHo@gmail.com",
+                phone_number = "1234567890",
+                reward_points = "0",
+                orderItem_id = 0,
+                customer_password = "12345",
+            };
+            // Setup mock repository behavior
+            mockRepository.Setup(x => x.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
+            mockRepository.Setup(x => x.deleteCustomerByEmail("QuangHo@@gmail.com"));
+            var fetchedCustomer = mockRepository.Object.getCustomerByEmail("QuangHo@gmail.com");
+            mockRepository.Object.deleteCustomerByEmail("QuangHo@gmail.com");
+            Assert.NotNull(fetchedCustomer);
+
+            mockRepository.Verify(x => x.deleteCustomerByEmail("QuangHo@gmail.com"), Times.Once);
+        }
+        [Fact]
+        public void addCustomer_True()
+        {
+
+        }
+        [Fact]
+        public void addCustomer_False()
         {
 
         }

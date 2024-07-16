@@ -20,12 +20,40 @@ namespace UnitTest
         [Fact]
         public void getInventoryInfo_True()
         {
+            var mockRepository = new Mock<IInventoryRepository>();
+            var expectedInventory = new List<InventoryModel> {
+                new InventoryModel
+            {
+                item_id = 1,
+                itemName = "test",
+                category = "Coffee",
+                quantity = 1,
+                cost = 1.00
+            }
+          };
+            mockRepository.Setup(x => x.GetInventoryInfo()).Returns(expectedInventory);
+            var results = mockRepository.Object.GetInventoryInfo();
+         
+            Assert.Equal(expectedInventory.Count, results.Count());
+
+            foreach (var expectedItem in expectedInventory)
+            {
+                Assert.Contains(expectedItem, results);
+            }
 
         }
         [Fact]
         public void getInventoryInfo_False()
         {
+  
+            var mockRepository = new Mock<IInventoryRepository>();
+            var inventory = new List<InventoryModel>(); 
 
+            mockRepository.Setup(x => x.GetInventoryInfo()).Returns(inventory);
+
+            var results = mockRepository.Object.GetInventoryInfo();
+
+            Assert.Empty(results);
         }
         [Fact]
         public void addInventory_True()

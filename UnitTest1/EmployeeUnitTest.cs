@@ -166,5 +166,15 @@ namespace CustomerUnitTest
         {
 
         }
+        [Fact]
+        public void addEmployee_True()
+        {
+
+        }
+        [Fact]
+        public void addEmployee_False()
+        {
+
+        }
     }
 }
