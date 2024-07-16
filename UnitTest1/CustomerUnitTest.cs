@@ -175,6 +175,83 @@ namespace UnitTest1
             Assert.Equal("newpassword", result.customer_password);
         }
         [Fact]
+        public void addCustomer_True()
+        {
+            var mockRepository = new Mock<ICustomerRepository>();
+            var customerEmail = "QuangHo@gmail.com";
+
+            // Setup mock repository behavior for adding a customer
+            //setup the repository while calling the addCustomer method, then do a callback to set the customer object with the new values
+            mockRepository.Setup(repo => repo.addCustomer(
+                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                .Callback<string, string, string, string, string>((firstname, lastname, email, phone, password) =>
+                {
+                    var customer = new CustomerModel
+                    {
+                        first_name = firstname,
+                        last_name = lastname,
+                        customer_email = email,
+                        phone_number = phone,
+                        customer_password = password
+                    };
+
+                    // Setup the getCustomerByEmail to return this customer after adding
+                    mockRepository.Setup(x => x.getCustomerByEmail(customerEmail)).Returns(customer);
+                });
+
+            // Act
+            mockRepository.Object.addCustomer("NewFirstName", "NewLastName", customerEmail, "1234567890", "newpassword");
+            var result = mockRepository.Object.getCustomerByEmail(customerEmail);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.Equal("NewFirstName", result.first_name);
+            Assert.Equal("NewLastName", result.last_name);
+            Assert.Equal("1234567890", result.phone_number);
+            Assert.Equal("newpassword", result.customer_password);
+
+            // Verify that addCustomer was called with the correct parameters
+            mockRepository.Verify(x => x.addCustomer("NewFirstName", "NewLastName", customerEmail, "1234567890", "newpassword"), Times.Once);
+        }
+        [Fact]
+        public void addCustomer_False()
+        {
+            var mockRepository = new Mock<ICustomerRepository>();
+            var customerEmail = "QuangHo@gmail.com";
+
+            // Setup mock repository behavior for adding a customer
+            mockRepository.Setup(repo => repo.addCustomer(
+                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>(), It.IsAny<string>()))
+                .Callback<string, string, string, string, string>((firstname, lastname, email, phone, password) =>
+                {
+                    var customer = new CustomerModel
+                    {
+                        first_name = firstname,
+                        last_name = lastname,
+                        customer_email = email,
+                        phone_number = phone,
+                        customer_password = password
+                    };
+
+                    // Setup the getCustomerByEmail to return this customer after adding
+                    mockRepository.Setup(x => x.getCustomerByEmail(customerEmail)).Returns(customer);
+                });
+
+            // Act
+            mockRepository.Object.addCustomer("NewFirstName", "NewLastName", customerEmail, "1234567890", "newpassword");
+            var result = mockRepository.Object.getCustomerByEmail(customerEmail);
+
+            // Assert
+            Assert.NotNull(result);
+            Assert.NotEqual("NotFirstName", result.first_name);
+            Assert.NotEqual("NotLastName", result.last_name);
+            Assert.NotEqual("123456789", result.phone_number);
+            Assert.NotEqual("NotNewPassword", result.customer_password);
+
+            // Verify that addCustomer was called with the correct parameters
+            mockRepository.Verify(x => x.addCustomer("NewFirstName", "NewLastName", customerEmail, "1234567890", "newpassword"), Times.Once);
+        }
+        [Fact]
         public void deleteCustomer_True()
         {
             var mockRepository = new Mock<ICustomerRepository>();
@@ -224,16 +301,7 @@ namespace UnitTest1
             Assert.Equal("Delete failed", ex.Message);
             mockRepository.Verify(x => x.deleteCustomerByEmail("QuangHo@gmail.com"), Times.Once);
         }
-        [Fact]
-        public void addCustomer_True()
-        {
 
-        }
-        [Fact]
-        public void addCustomer_False()
-        {
-
-        }
 
     }
 }
