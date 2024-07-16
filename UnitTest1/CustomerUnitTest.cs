@@ -189,14 +189,12 @@ namespace UnitTest1
                 orderItem_id = 0,
                 customer_password = "12345",
             };
-            // Setup mock repository behavior
             mockRepository.Setup(x => x.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
             mockRepository.Setup(x => x.deleteCustomerByEmail("QuangHo@gmail.com"));
             var fetchedCustomer = mockRepository.Object.getCustomerByEmail("QuangHo@gmail.com");
             mockRepository.Object.deleteCustomerByEmail("QuangHo@gmail.com");
-
-            Assert.Null(fetchedCustomer); 
-
+            Assert.NotNull(fetchedCustomer); // Verify that customer is fetched
+            // Verify that deleteCustomerByEmail was called with the correct email parameter
             mockRepository.Verify(x => x.deleteCustomerByEmail("QuangHo@gmail.com"), Times.Once);
 
         }
@@ -217,11 +215,13 @@ namespace UnitTest1
             };
             // Setup mock repository behavior
             mockRepository.Setup(x => x.getCustomerByEmail("QuangHo@gmail.com")).Returns(customer);
-            mockRepository.Setup(x => x.deleteCustomerByEmail("QuangHo@@gmail.com"));
+            //Throw an exception in there to simulate a failed delete
+            mockRepository.Setup(x => x.deleteCustomerByEmail("QuangHo@gmail.com")).Throws(new Exception("Delete failed"));
             var fetchedCustomer = mockRepository.Object.getCustomerByEmail("QuangHo@gmail.com");
-            mockRepository.Object.deleteCustomerByEmail("QuangHo@gmail.com");
-            Assert.NotNull(fetchedCustomer);
-
+            Assert.NotNull(fetchedCustomer); // Verify that customer is fetched
+            // Verify that deleteCustomerByEmail was called with the correct email parameter
+            Exception ex = Assert.Throws<Exception>(() => mockRepository.Object.deleteCustomerByEmail("QuangHo@gmail.com"));
+            Assert.Equal("Delete failed", ex.Message);
             mockRepository.Verify(x => x.deleteCustomerByEmail("QuangHo@gmail.com"), Times.Once);
         }
         [Fact]
