@@ -61,8 +61,6 @@ namespace UnitTest
             var mockRepository = new Mock<IInventoryRepository>();
             
 
-            // Setup mock repository behavior for adding a customer
-            //setup the repository while calling the addCustomer method, then do a callback to set the customer object with the new values
             mockRepository.Setup(repo => repo.addInventory(
                 It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>(), It.IsAny<double>()))
                 .Callback<string, string, int, double>((itemName, category, quantity, cost) =>
@@ -78,7 +76,7 @@ namespace UnitTest
                     }
                 };
 
-                    // Setup the getCustomerByEmail to return this customer after adding
+                
                     mockRepository.Setup(x => x.GetInventoryInfo()).Returns(expectedInventory);
                 });
             mockRepository.Object.addInventory("test", "Coffee", 1, 1.00);
@@ -96,8 +94,7 @@ namespace UnitTest
             var mockRepository = new Mock<IInventoryRepository>();
 
 
-            // Setup mock repository behavior for adding a customer
-            //setup the repository while calling the addCustomer method, then do a callback to set the customer object with the new values
+ 
             mockRepository.Setup(repo => repo.addInventory(
                 It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>(), It.IsAny<double>()))
                 .Callback<string, string, int, double>((itemName, category, quantity, cost) =>
@@ -113,7 +110,7 @@ namespace UnitTest
                     }
                 };
 
-                    // Setup the getCustomerByEmail to return this customer after adding
+                   
                     mockRepository.Setup(x => x.GetInventoryInfo()).Returns(expectedInventory);
                 });
             
@@ -125,13 +122,19 @@ namespace UnitTest
         public void updateInventory_True()
         {
             var mockRepository = new Mock<IInventoryRepository>();
-
-
-            // Setup mock repository behavior for adding a customer
-            //setup the repository while calling the addCustomer method, then do a callback to set the customer object with the new values
-            mockRepository.Setup(repo => repo.addInventory(
-                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>(), It.IsAny<double>()))
-                .Callback<string, string, int, double>((itemName, category, quantity, cost) =>
+            var inventory =  new InventoryModel
+            {
+                item_id = 1,
+                itemName = "test",
+                category = "Coffee",
+                quantity = 1,
+                cost = 1.00
+            };
+            var target = "test";
+ 
+            mockRepository.Setup(repo => repo.updateInventory(
+                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>(), It.IsAny<double>(), It.IsAny<string>()))
+                .Callback<string, string, int, double, string>((itemName, category, quantity, cost, target) =>
                 {
                     var expectedInventory = new List<InventoryModel> {
                 new InventoryModel
@@ -143,8 +146,42 @@ namespace UnitTest
 
                     }
                 };
+                    mockRepository.Setup(x => x.GetInventoryInfo()).Returns(expectedInventory);
+                });
 
-                    // Setup the getCustomerByEmail to return this customer after adding
+          mockRepository.Object.updateInventory("newTest", "newCoffee", 1, 1.00, target);
+            var results = mockRepository.Object.GetInventoryInfo();
+            Assert.NotEmpty(results);
+      
+        }
+        [Fact]
+        public void updateInventory_False()
+        {
+            var mockRepository = new Mock<IInventoryRepository>();
+            var inventory = new InventoryModel
+            {
+                item_id = 1,
+                itemName = "test",
+                category = "Coffee",
+                quantity = 1,
+                cost = 1.00
+            };
+            var target = "test";
+    
+            mockRepository.Setup(repo => repo.updateInventory(
+                It.IsAny<string>(), It.IsAny<string>(), It.IsAny<int>(), It.IsAny<double>(), It.IsAny<string>()))
+                .Callback<string, string, int, double, string>((itemName, category, quantity, cost, target) =>
+                {
+                    var expectedInventory = new List<InventoryModel> {
+                new InventoryModel
+                    {
+                        itemName = itemName,
+                        category = category,
+                        quantity = quantity,
+                        cost = cost
+
+                    }
+                };
                     mockRepository.Setup(x => x.GetInventoryInfo()).Returns(expectedInventory);
                 });
 
@@ -152,19 +189,60 @@ namespace UnitTest
             Assert.Empty(results);
         }
         [Fact]
-        public void updateInventory_False()
-        {
-
-        }
-        [Fact]
         public void deleteInventory_True()
         {
+            var mockRepository = new Mock<IInventoryRepository>();
+            var initialInventory = new List<InventoryModel> {
+                new InventoryModel
+            {
+                item_id = 1,
+                itemName = "test",
+                category = "Coffee",
+                quantity = 1,
+                cost = 1.00
+            }
+          };
+            mockRepository.Setup(repo => repo.GetInventoryInfo()).Returns(initialInventory);
 
+          
+            mockRepository.Object.deleteInventory(1);
+
+         
+            mockRepository.Verify(x => x.deleteInventory(1), Times.Once);
+
+            
+            var updatedInventory = initialInventory.Where(item => item.item_id != 1).ToList();
+            mockRepository.Setup(repo => repo.GetInventoryInfo()).Returns(updatedInventory);
+
+            var result = mockRepository.Object.GetInventoryInfo();
+            Assert.DoesNotContain(result, item => item.item_id == 1); 
         }
         [Fact]
         public void deleteInventory_False()
         {
+            var mockRepository = new Mock<IInventoryRepository>();
+            var initialInventory = new List<InventoryModel>
+        {
+            new InventoryModel
+            {
+                item_id = 1,
+                itemName = "test",
+                category = "Coffee",
+                quantity = 1,
+                cost = 1.00
+            }
+        };
 
+            mockRepository.Setup(repo => repo.GetInventoryInfo()).Returns(initialInventory);
+
+            mockRepository.Object.deleteInventory(2); 
+            mockRepository.Verify(x => x.deleteInventory(2), Times.Once);
+
+            mockRepository.Setup(repo => repo.GetInventoryInfo()).Returns(initialInventory);
+
+            var result = mockRepository.Object.GetInventoryInfo();
+            Assert.Equal(initialInventory.Count, result.Count()); 
+            Assert.Contains(result, item => item.item_id == 1); 
         }
     }
 }
