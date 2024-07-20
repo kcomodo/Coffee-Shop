@@ -8,6 +8,8 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { EventsComponent } from './components/events/events.component';
+import { AuthGuard } from './guards/auth.guard';
+
 //this is the router module, it is used to define the routes of the application
 //the blank path will redirect to the home component when the application is started
 const routes: Routes = [
@@ -25,7 +27,8 @@ const routes: Routes = [
   },
   {
     path: 'customer-info',
-    component: CustomerInfoComponent
+    component: CustomerInfoComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'about',
@@ -37,11 +40,13 @@ const routes: Routes = [
   },
   {
     path: 'menu',
-    component: MenuComponent
+    component: MenuComponent,
+  //  canActivate: [AuthGuard]
   },
   {
     path: 'events',
-    component: EventsComponent
+    component: EventsComponent,
+   // canActivate: [AuthGuard]
   },
   {
     path: '', redirectTo: 'home', pathMatch: 'full'

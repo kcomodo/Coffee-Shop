@@ -4,6 +4,7 @@ import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { EmailServiceService } from '../../services/email-service.service';
+import { authGuard } from '../../guards/auth.guard';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -27,7 +28,7 @@ export class LoginComponent {
         // Handle successful login, e.g., redirect to dashboard
         if (response == true) {
           this.emailService.setEmail(this.email);
-          console.log("Email saved:", this.emailService.getEmail());
+          console.log("Login successful, Email saved:", this.emailService.getEmail());
           this.router.navigate(['customer-info']);
         }
         
