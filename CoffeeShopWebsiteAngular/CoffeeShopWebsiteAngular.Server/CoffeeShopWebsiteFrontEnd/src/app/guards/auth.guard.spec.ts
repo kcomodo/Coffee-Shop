@@ -1,6 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { CanActivateFn } from '@angular/router';
-
+import { Injectable } from '@angular/core';
 import { authGuard } from './auth.guard';
 
 describe('authGuard', () => {

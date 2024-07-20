@@ -25,6 +25,10 @@ import { AboutComponent } from './components/about/about.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { EventsComponent } from './components/events/events.component';
 import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
+import { AuthService } from './services/auth.service';
+import { AuthGuard } from './guards/auth.guard';
+import { EmailServiceService } from './services/email-service.service';
+
 //under declaration, just insert the components so the router can navigate to them
 @NgModule({
   declarations: [
@@ -58,8 +62,13 @@ import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
   ],
   
   providers: [
+    AuthGuard,
+    AuthService,
+    EmailServiceService,
     provideClientHydration(),
     provideAnimationsAsync()
+
+
   ],
   bootstrap: [AppComponent]
 })
