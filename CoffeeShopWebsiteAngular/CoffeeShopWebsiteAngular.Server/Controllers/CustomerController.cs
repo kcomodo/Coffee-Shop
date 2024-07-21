@@ -101,6 +101,18 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
         }
         private string GenerateJwtToken(string email)
         {
+            //Steps:
+            //Create a new token handler
+            //Ensure your key is at least 32 bytes (256 bits) long
+            //create a new token descriptor
+            //assign the subject as a value in this case the email, make a claimidentity for it
+            //the new claim is JwtRegisteredClaimNames.Sub, is for the email
+            //set the expiration time for the token
+            //sign the credentials to ensures the tokens authenticity and integrity
+            //close out of the token descriptor
+            //create the token
+            //write the token and return it
+
             //create a new token handler
             var tokenHandler = new JwtSecurityTokenHandler();
 
@@ -111,18 +123,23 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
            // var key = Encoding.ASCII.GetBytes("YourSuperSecureKeyHereThatIsAtLeast32BytesLong"); // Update this key to be at least 32 bytes
             var key = Encoding.UTF8.GetBytes("YourSuperSecureKeyHereThatIsAtLeast32BytesLong");
 
+            //ClaimsIdentity represents the pieces of information about the user
+            //Subject is the email
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]
-          {
-            new Claim(JwtRegisteredClaimNames.Sub, email) // Subject claim for email
-        }),
-                Expires = DateTime.UtcNow.AddHours(1), // Token expiration
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature) // Signing credentials
+                {
+                    new Claim(JwtRegisteredClaimNames.Sub, email) // Used to identify the user
+                }),
+                Expires = DateTime.UtcNow.AddHours(1), // Gives an expiration time for the token
+                //SigningCredentials ensures the tokens authenticity and integrity
+                //SymmetricSecurityKey creates a shared secret key between the server and the client, used for signing the token
+                //SecurityAlgorithms.HmacSha256Signature is the algorithm used to sign the token
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature) 
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor); // Create token
-            return tokenHandler.WriteToken(token); // Serialize token
+            return tokenHandler.WriteToken(token); // Write token and return it
         }
 
     }
