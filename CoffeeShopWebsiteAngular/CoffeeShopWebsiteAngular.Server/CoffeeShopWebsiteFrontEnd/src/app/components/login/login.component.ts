@@ -6,6 +6,7 @@ import { Router } from '@angular/router';
 import { EmailServiceService } from '../../services/email-service.service';
 import { authGuard } from '../../guards/auth.guard';
 import { JwtModule } from '@auth0/angular-jwt';
+import { Token } from '@angular/compiler';
 
 @Component({
   selector: 'app-login',
@@ -37,7 +38,7 @@ export class LoginComponent {
 
           this.emailService.setEmail(this.email);
           console.log("Login successful, Email saved:", this.emailService.getEmail());
-          localStorage.setItem('token', response.token);
+          
           this.router.navigate(['customer-info']);
         }
         

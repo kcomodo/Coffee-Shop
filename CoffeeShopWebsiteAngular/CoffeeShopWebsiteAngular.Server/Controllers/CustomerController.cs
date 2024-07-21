@@ -3,6 +3,12 @@ using Microsoft.AspNetCore.Mvc;
 using POS_Folders.Repository;
 using POS_Folders.Services;
 using System.Text.RegularExpressions;
+using System;
+using System.Security.Claims;
+using System.Text;
+using System.IdentityModel.Tokens.Jwt;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Http;
 namespace CoffeeShopWebsiteAngular.Server.Controllers
 {
     //Create a new controller for customer
@@ -37,8 +43,29 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
         public IActionResult ValidateLogin(string email, string password)
         {
             bool isValid = _customerServices.validateCustomerLogin(email, password);
-            return Ok(isValid);
+            //when this value is true, we will create a token for the user
+            //create a new method to generate a token
+            if (isValid)
+            {
+                var token = GenerateJwtToken(email);
+                var cookieOptions = new CookieOptions
+                {
+                    HttpOnly = true,
+                    Secure = true, // Set to true if using HTTPS
+                    Expires = DateTime.UtcNow.AddHours(1),
+                    SameSite = SameSiteMode.Strict
+                };
+                Response.Cookies.Append("auth_token", token, cookieOptions);
+
+                // For testing purposes, you can also return the token directly
+                return Ok(new { Token = token });
+            }
+            else
+            {
+                return Unauthorized();
+            }
         }
+
         [HttpPost("RegisterCustomer")]
         public IActionResult RegisterCustomer(string firstname, string lastname, string email, string phone, string password)
         {
@@ -72,6 +99,32 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             int id = _customerRepository.getCustomerIdUsingEmail(email);
             return Ok(id);
         }
+        private string GenerateJwtToken(string email)
+        {
+            //create a new token handler
+            var tokenHandler = new JwtSecurityTokenHandler();
+
+            // Ensure your key is at least 32 bytes (256 bits) long
+            //Encoding will convert the string to byte array
+            //ASCII represents each character in the string as a single byte
+
+           // var key = Encoding.ASCII.GetBytes("YourSuperSecureKeyHereThatIsAtLeast32BytesLong"); // Update this key to be at least 32 bytes
+            var key = Encoding.UTF8.GetBytes("YourSuperSecureKeyHereThatIsAtLeast32BytesLong");
+
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(new[]
+          {
+            new Claim(JwtRegisteredClaimNames.Sub, email) // Subject claim for email
+        }),
+                Expires = DateTime.UtcNow.AddHours(1), // Token expiration
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature) // Signing credentials
+            };
+
+            var token = tokenHandler.CreateToken(tokenDescriptor); // Create token
+            return tokenHandler.WriteToken(token); // Serialize token
+        }
+
     }
 }
 
