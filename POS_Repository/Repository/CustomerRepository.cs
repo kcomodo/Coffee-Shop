@@ -89,6 +89,22 @@ namespace POS_Folders.Repository
             cmd.Parameters.AddWithValue("@customer_password", password);
             cmd.ExecuteNonQuery();
         }
+        public int getCustomerIdUsingEmail(string email)
+        {
+            string query = "SELECT * FROM customer WHERE customer_email = @customer_email";
+            MySqlCommand cmd = new MySqlCommand(query, _connection);
+            cmd.Parameters.AddWithValue("@customer_email", email);
+            MySqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read())
+            {
+                CustomerModel customer = new CustomerModel
+                {
+                    customer_id = reader.GetInt32("customer_id"),
+                };
+                return customer.customer_id;
+            }
+            return 0;
+        }
 
     }
 }

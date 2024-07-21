@@ -66,6 +66,12 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             _customerRepository.updateCustomerByEmail(firstname, lastname, email, phone, password);
             return Ok();
         }
+        [HttpGet("GetCustomerIdUsingEmail")]
+        public IActionResult GetCustomerIdUsingEmail(string email)
+        {
+            int id = _customerRepository.getCustomerIdUsingEmail(email);
+            return Ok(id);
+        }
     }
 }
 

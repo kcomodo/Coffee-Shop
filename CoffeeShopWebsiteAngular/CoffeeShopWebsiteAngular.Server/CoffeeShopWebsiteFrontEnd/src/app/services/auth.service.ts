@@ -59,14 +59,20 @@ export class AuthService {
     const body = {};
     return this.http.get<any>(`${this.baseUrl}/GetCustomerByEmail?email=${email}`, body);
   }
+  //https://localhost:7059/GetCustomerIdUsingEmail?email=QuangHo%40gmail.com
+  GetCustomerId(email: string): Observable<any> {
+    const body = {};
+    return this.http.get<any>(`${this.baseUrl}/GetCustomerIdUsingEmail?email=${email}`, body);
+  }
   //created a method to check if the user is logged in
   isLoggedIn(): boolean {
-    console.log("isLoggedin received: ",this.isAuthenticated);
+    console.log("isLoggedin received: ", this.isAuthenticated);
     return this.isAuthenticated;
   }
   //created a method to log out the user
   logout(): void {
     this.isAuthenticated = false;
     console.log("isLoggedin received: ", this.isAuthenticated);
+    localStorage.removeItem('token');
   }
 }
