@@ -28,7 +28,7 @@ import { MatGridList, MatGridListModule } from '@angular/material/grid-list';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { EmailServiceService } from './services/email-service.service';
-
+import { JwtModule } from '@auth0/angular-jwt';
 //under declaration, just insert the components so the router can navigate to them
 @NgModule({
   declarations: [
@@ -58,7 +58,8 @@ import { EmailServiceService } from './services/email-service.service';
     MatFormFieldModule,
     LayoutModule,
     MatGridList,
-    MatGridListModule
+    MatGridListModule,
+    JwtModule
   ],
   
   providers: [
