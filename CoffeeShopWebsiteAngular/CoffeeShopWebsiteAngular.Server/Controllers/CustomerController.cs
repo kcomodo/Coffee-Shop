@@ -55,10 +55,11 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
                     Expires = DateTime.UtcNow.AddHours(1),
                     SameSite = SameSiteMode.Strict
                 };
-                Response.Cookies.Append("auth_token", token, cookieOptions);
+                Response.Cookies.Append("auth_token", token, cookieOptions); //Store the token in a cookie, can now access the cookie from the client side
 
                 // For testing purposes, you can also return the token directly
                 return Ok(new { Token = token });
+                //return Ok(token); // Just the token string
             }
             else
             {
