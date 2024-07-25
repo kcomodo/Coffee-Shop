@@ -142,11 +142,11 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
                 }),
                 Expires = DateTime.UtcNow.AddHours(1), // Gives an expiration time for the token
                 Issuer = _issuer, // Your issuer
-                Audience = _audience, // Your audience
+                Audience = "https://localhost:7059 , http://localhost:4200/",  // Your audience
                 //SigningCredentials ensures the tokens authenticity and integrity
                 //SymmetricSecurityKey creates a shared secret key between the server and the client, used for signing the token
                 //SecurityAlgorithms.HmacSha256Signature is the algorithm used to sign the token
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature) 
+                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
 
             var token = tokenHandler.CreateToken(tokenDescriptor); // Create token
