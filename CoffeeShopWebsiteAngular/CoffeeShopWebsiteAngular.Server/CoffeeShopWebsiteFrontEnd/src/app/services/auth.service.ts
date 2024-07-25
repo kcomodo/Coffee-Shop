@@ -40,7 +40,7 @@ export class AuthService {
             this.isAuthenticated = true; // Set authentication status based on response
             console.log("isLoggedin received: ", this.isAuthenticated);
             console.log("Token received and saved: ", this.token);
-            this.cookieService.set(this.tokenSaved, this.token, { path: '/authtoken' });
+            this.cookieService.set(this.tokenSaved, this.token, { path: '/' });
           }
           else {
             this.isAuthenticated = false;
@@ -65,7 +65,7 @@ export class AuthService {
   //https://localhost:7059/GetCustomerByEmail?email=QuangHo%40gmail.com
   GetCustomerInfo(email: string): Observable<any> {
     const body = {};
-    const token = this.cookieService.get('authToken');
+    const token = this.getToken();
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -74,7 +74,8 @@ export class AuthService {
   //https://localhost:7059/GetCustomerIdUsingEmail?email=QuangHo%40gmail.com
   GetCustomerId(email: string): Observable<any> {
     const body = {};
-    const token = this.cookieService.get('authToken');
+    const token = this.getToken();
+    console.log("GetCusttomerId token grabbed: ", token);
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -90,10 +91,10 @@ export class AuthService {
   logout(): void {
     this.isAuthenticated = false;
     console.log("isLoggedin received: ", this.isAuthenticated);
-    localStorage.removeItem('token');
+
   }
   
   getToken(): string | null {
-    return this.cookieService.get('auth_token') || this.token;
+    return this.cookieService.get(this.tokenSaved);
   }
 }

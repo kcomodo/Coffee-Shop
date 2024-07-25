@@ -22,7 +22,7 @@ export class CustomerInfoComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     // Perform actions with the token
-    const testingtoken = this.cookieService.get('auth_token')
+    const testingtoken = this.authService.getToken();
     console.log('Token retrieved at info page:', testingtoken);
     this.Email = this.emailService.getEmail();
     console.log("Grabbing email:", this.Email);
