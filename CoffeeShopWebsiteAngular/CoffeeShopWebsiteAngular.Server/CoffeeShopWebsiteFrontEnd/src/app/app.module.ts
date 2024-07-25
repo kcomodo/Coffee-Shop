@@ -29,6 +29,8 @@ import { AuthService } from './services/auth.service';
 import { AuthGuard } from './guards/auth.guard';
 import { EmailServiceService } from './services/email-service.service';
 import { JwtModule } from '@auth0/angular-jwt';
+import { tokeninterceptorInterceptor } from './interceptor/tokeninterceptor.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 //under declaration, just insert the components so the router can navigate to them
 @NgModule({
@@ -60,13 +62,19 @@ import { JwtModule } from '@auth0/angular-jwt';
     LayoutModule,
     MatGridList,
     MatGridListModule,
-    JwtModule
+    JwtModule,
   ],
   
   providers: [
     AuthGuard,
     AuthService,
     EmailServiceService,
+      {
+      provide: HTTP_INTERCEPTORS,
+        useClass: tokeninterceptorInterceptor,
+      multi: true
+      },
+
     provideClientHydration(),
     provideAnimationsAsync()
 
