@@ -19,7 +19,8 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
 
     public class CustomerController : Controller
     {
-
+        private readonly string _issuer = "https://localhost:7059"; // Your issuer
+        private readonly string _audience = "https://localhost:7059"; // Your audience
         //call the repository and services
         private readonly ICustomerRepository _customerRepository;
         private readonly ICustomerServices _customerServices;
@@ -107,6 +108,7 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
         }
         private string GenerateJwtToken(string email)
         {
+               
             //Steps:
             //Create a new token handler
             //Ensure your key is at least 32 bytes (256 bits) long
@@ -139,6 +141,8 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
                     new Claim(JwtRegisteredClaimNames.Sub, email) // Used to identify the user
                 }),
                 Expires = DateTime.UtcNow.AddHours(1), // Gives an expiration time for the token
+                Issuer = _issuer, // Your issuer
+                Audience = _audience, // Your audience
                 //SigningCredentials ensures the tokens authenticity and integrity
                 //SymmetricSecurityKey creates a shared secret key between the server and the client, used for signing the token
                 //SecurityAlgorithms.HmacSha256Signature is the algorithm used to sign the token
