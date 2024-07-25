@@ -9,6 +9,8 @@ using System.Text;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 namespace CoffeeShopWebsiteAngular.Server.Controllers
 {
     //Create a new controller for customer
@@ -32,6 +34,8 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
 
         }
         //backend part just to get information from the database
+        //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Authorize]
         [HttpGet("GetCustomerByEmail")]
         public IActionResult GetCustomerByEmail(string email)
         {
@@ -65,7 +69,7 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             {
                 return Unauthorized();
             }
-        }
+        } 
 
         [HttpPost("RegisterCustomer")]
         public IActionResult RegisterCustomer(string firstname, string lastname, string email, string phone, string password)
@@ -94,6 +98,7 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
             _customerRepository.updateCustomerByEmail(firstname, lastname, email, phone, password);
             return Ok();
         }
+        [Authorize]
         [HttpGet("GetCustomerIdUsingEmail")]
         public IActionResult GetCustomerIdUsingEmail(string email)
         {
@@ -116,6 +121,7 @@ namespace CoffeeShopWebsiteAngular.Server.Controllers
 
             //create a new token handler
             var tokenHandler = new JwtSecurityTokenHandler();
+
 
             // Ensure your key is at least 32 bytes (256 bits) long
             //Encoding will convert the string to byte array

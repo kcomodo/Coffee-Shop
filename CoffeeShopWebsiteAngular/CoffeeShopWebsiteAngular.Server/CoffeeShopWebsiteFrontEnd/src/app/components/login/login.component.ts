@@ -32,8 +32,10 @@ export class LoginComponent {
         if (response == true) {
           
           this.authService.GetCustomerId(this.email).subscribe(
+            
             userId => {
               console.log("userid", userId);
+              
             });
 
           this.emailService.setEmail(this.email);

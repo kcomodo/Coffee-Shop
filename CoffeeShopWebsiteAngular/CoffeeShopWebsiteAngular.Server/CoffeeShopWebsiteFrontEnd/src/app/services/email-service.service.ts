@@ -1,17 +1,20 @@
 import { Injectable } from '@angular/core';
 import { get } from 'https';
-
+import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
 export class EmailServiceService {
-  email: string = '';
-  setEmail(emailGrabbed: string) {
-    this.email = emailGrabbed;
-    console.log("Setting email:",this.email)
+  constructor(private cookieService: CookieService) { }
+  private emailKey = 'userEmail';
+  setEmail(email: string, ) {
+    //this.email = emailGrabbed;
+    this.cookieService.set(this.emailKey, email, { path: '/' });
+    console.log("Setting email:",email)
   }
   getEmail() {
-    return this.email;
+    return this.cookieService.get(this.emailKey);
+
   }
-  constructor() { }
+
 }
