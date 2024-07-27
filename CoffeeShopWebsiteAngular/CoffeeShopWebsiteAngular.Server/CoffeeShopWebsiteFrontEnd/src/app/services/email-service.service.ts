@@ -16,5 +16,7 @@ export class EmailServiceService {
     return this.cookieService.get(this.emailKey);
 
   }
-
+  deleteEmail() {
+    this.cookieService.delete(this.emailKey, '/'); // Remove the token cookie
+  }
 }

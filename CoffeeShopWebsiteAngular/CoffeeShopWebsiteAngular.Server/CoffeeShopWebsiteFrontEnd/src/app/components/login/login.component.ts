@@ -41,7 +41,7 @@ export class LoginComponent {
           this.emailService.setEmail(this.email);
           console.log("Login successful, Email saved:", this.emailService.getEmail());
           
-          this.router.navigate(['customer-info']);
+         // this.router.navigate(['customer-info']);
         }
         
       },

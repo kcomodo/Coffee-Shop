@@ -15,6 +15,10 @@ export class AuthGuard implements CanActivate{
      // this.router.navigate(['/customer-info']);
       return true;
     }
+    if (this.authService.getToken() != null) {
+      return true;
+    }
+
     else {
       console.log("auth.guard.ts is false, will stay on login")
      // this.router.navigate(['/login']);

@@ -7,16 +7,23 @@ import { Token } from '@angular/compiler';
 import { map } from 'rxjs/operators';
 import { response } from 'express';
 import { HttpHeaders } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class AuthService implements OnInit{
   //default url for the api which is swagger
   private token: string | null = null;
-  private isAuthenticated = true;
+  private isAuthenticated = false;
   private baseUrl = 'https://localhost:7059';
   private tokenSaved = 'tokenSaved';
   constructor(private http: HttpClient, private cookieService: CookieService) { }
+  ngOnInit() {
+    if(this.getToken() != null){
+      this.isAuthenticated = true;
+      console.log("the token is true, will stay on customer info page: ", this.isAuthenticated);
+    }
+  }
   //Call the controller methods from asp.net
   //Put a body in here because angular does not like having less than 2 parameters
       //Now we connect the api return using the pipe method
@@ -41,6 +48,9 @@ export class AuthService {
             console.log("isLoggedin received: ", this.isAuthenticated);
             console.log("Token received and saved: ", this.token);
             this.cookieService.set(this.tokenSaved, this.token, { path: '/' });
+          }
+          if (this.getToken() != null) {
+            this.isAuthenticated = true;
           }
           else {
             this.isAuthenticated = false;
@@ -94,11 +104,17 @@ export class AuthService {
   
   logout(): void {
     this.isAuthenticated = false;
-    console.log("isLoggedin received: ", this.isAuthenticated);
+    this.token = null;
+    this.cookieService.delete(this.tokenSaved, '/'); // Remove the token cookie
+    console.log('Logged out, token removed');
 
   }
-  
+  /*
   getToken(): string | null {
     return this.cookieService.get(this.tokenSaved);
+  }
+  */
+  getToken(): string | null {
+    return this.cookieService.get(this.tokenSaved) || null;
   }
 }
