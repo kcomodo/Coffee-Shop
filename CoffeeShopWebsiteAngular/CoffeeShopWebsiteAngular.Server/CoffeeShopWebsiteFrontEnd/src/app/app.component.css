@@ -4,3 +4,49 @@ body{
     margin:0;
    
 }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 1000;
+}
+
+.navbar-list {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 10px;
+}
+
+  .navbar-list a {
+    text-decoration: none;
+    margin: 0 10px;
+    color: #333333;
+  }
+
+.menuButton {
+  position: absolute;
+  left: 20px;
+  top: 70px;
+}
+
+.mat-mdc-raised-button.color-button {
+  background-color: black;
+  color: white;
+}
+
+.mat-mdc-button.color-option {
+  color: black;
+}
+#container {
+  position: relative; /* Ensure positioning context for absolute elements */
+  width: 100%;
+  height: 100vh; /* Full viewport height */
+  background-image: url('../assets/images/background_image.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: 1; /* Lower than the menu button */
+}

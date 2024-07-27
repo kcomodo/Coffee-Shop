@@ -33,7 +33,6 @@ export class CustomerInfoComponent implements OnInit {
       this.authService.GetCustomerInfo(this.Email).subscribe((response) => {
         console.log("info: ",response);
         this.FirstName = response.first_name;
-
         this.LastName = response.last_name;
         this.Email = response.customer_email;
         this.Password = response.customer_password;
