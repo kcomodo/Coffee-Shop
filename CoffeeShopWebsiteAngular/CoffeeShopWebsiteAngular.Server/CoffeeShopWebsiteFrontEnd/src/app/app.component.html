@@ -10,7 +10,9 @@
     <a mat-button class="color-option" routerLink="/about">About</a>
     <a mat-button class="color-option" routerLink="/events">Events</a>
     <a mat-button class="color-option" routerLink="/contact">Contact</a>
-    <a mat-button class="color-option" routerLink="/login">Login</a>
+    <a mat-button *ngIf ="!checkLogin()" class="color-option" routerLink="/login">Login</a>
+    <a mat-button *ngIf="checkLogin()" class="color-option" (click)="checkLogout()">Logout</a>
+    <a mat-button class="color-option" routerLink="/customer-info">Profile</a>
   </ul>
   <div class="contact-info">
 
