@@ -1,49 +1,7 @@
-.mat-mdc-raised-button.color-button {
-  background-color: black;
-  color: white;
-}
 
-.mat-mdc-button.color-option {
-  color: black;
-}
-
-
-
-/* Container styles */
-#container {
-  position: relative; /* Ensure positioning context for absolute elements */
-  width: 100%;
-  height: 100vh; /* Full viewport height */
-  background-image: url('../../../assets/images/background_image.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-.navbar {
-  position: fixed; /* Fixed position to stay at the top */
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #ffffff; /* Example background color */
-  z-index: 1000; /* Ensure it's above other content */
-}
-
-.navbar-list {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 10px;
-}
-
-  .navbar-list a {
-    text-decoration: none;
-    margin: 0 10px;
-    color: #333333; /* Example text color */
-  }
-  .menuButton {
+.menuButton {
   position: absolute;
-  left: 20px; /* Example positioning */
-  top:70px;
+  top: 150px; /* Adjust this value to position vertically */
+  left: 50px; /* Adjust this value to position horizontally */
+  z-index: 1010; /* Ensure this is higher than the z-index of the background */
 }
-

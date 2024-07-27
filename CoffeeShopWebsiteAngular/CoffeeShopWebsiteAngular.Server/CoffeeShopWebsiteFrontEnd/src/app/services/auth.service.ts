@@ -65,7 +65,9 @@ export class AuthService {
   //https://localhost:7059/GetCustomerByEmail?email=QuangHo%40gmail.com
   GetCustomerInfo(email: string): Observable<any> {
     const body = {};
+    //grab the token, the token is stored inside the cookie
     const token = this.getToken();
+    //every request needs a header from the token
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
@@ -74,8 +76,10 @@ export class AuthService {
   //https://localhost:7059/GetCustomerIdUsingEmail?email=QuangHo%40gmail.com
   GetCustomerId(email: string): Observable<any> {
     const body = {};
+    //grab the token, the token is stored inside the cookie
     const token = this.getToken();
     console.log("GetCusttomerId token grabbed: ", token);
+    //every request needs a header from the token
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
     });
