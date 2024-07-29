@@ -45,17 +45,17 @@ export class AuthService implements OnInit{
           if (response.token) {
             this.token = response.token;
             this.isAuthenticated = true; // Set authentication status based on response
-            console.log("isLoggedin received: ", this.isAuthenticated);
-            console.log("Token received and saved: ", this.token);
+          //  console.log("isLoggedin received: ", this.isAuthenticated);
+           // console.log("Token received and saved: ", this.token);
             this.cookieService.set(this.tokenSaved, this.token, { path: '/' });
           }
-          if (this.getToken() != null) {
+         else if (this.getToken() != null) {
             this.isAuthenticated = true;
           }
           else {
             this.isAuthenticated = false;
-            console.log(response.token);
-            console.log("isLoggedin failed: ", this.isAuthenticated);
+          //  console.log(response.token);
+          //  console.log("isLoggedin failed: ", this.isAuthenticated);
           }
 
         }),
@@ -88,7 +88,7 @@ export class AuthService implements OnInit{
     const body = {};
     //grab the token, the token is stored inside the cookie
     const token = this.getToken();
-    console.log("GetCusttomerId token grabbed: ", token);
+  //  console.log("GetCusttomerId token grabbed: ", token);
     //every request needs a header from the token
     const headers = new HttpHeaders({
       'Authorization': `Bearer ${token}`
@@ -97,7 +97,7 @@ export class AuthService implements OnInit{
   }
   //created a method to check if the user is logged in
   isLoggedIn(): boolean {
-    console.log("isLoggedin received: ", this.isAuthenticated);
+  //  console.log("isLoggedin received: ", this.isAuthenticated);
     return this.isAuthenticated;
   }
   //created a method to log out the user
@@ -106,7 +106,7 @@ export class AuthService implements OnInit{
     this.isAuthenticated = false;
     this.token = null;
     this.cookieService.delete(this.tokenSaved, '/'); // Remove the token cookie
-    console.log('Logged out, token removed');
+  //  console.log('Logged out, token removed');
 
   }
   /*
