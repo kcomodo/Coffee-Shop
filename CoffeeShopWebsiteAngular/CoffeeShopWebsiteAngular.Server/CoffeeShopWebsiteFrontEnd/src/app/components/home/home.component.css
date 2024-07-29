@@ -1,7 +1,30 @@
 
-.menuButton {
+.menuContainer {
   position: absolute;
   top: 150px; /* Adjust this value to position vertically */
   left: 50px; /* Adjust this value to position horizontally */
   z-index: 1010; /* Ensure this is higher than the z-index of the background */
+  border-radius: 8px;
+  padding: 5px;
+  display: inline-block;
+  background: #F8E4BE;
+  border-radius: 49px;
+  border: 5px solid #8B4513; /* Set border width and color */
 }
+
+.color-button {
+  background-color: #D2B48C;
+  color: #8B4513;
+  border: none;
+  padding: 1px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-family: Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  border-radius: 49px;
+}
+
+
+
