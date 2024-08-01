@@ -1,5 +1,4 @@
 # CoffeeShop WIP
-POS System for desktop application.
 ## Front-end using AngularJS
 ![image](https://github.com/user-attachments/assets/5dc8b56e-c03f-46c1-a365-198e55b784c1)
 
@@ -8,3 +7,4 @@ POS System for desktop application.
 
 ## Fleshed out back-end using Asp.net with user authentications such as JWT tokens and cookie storage.
 ![image](https://github.com/user-attachments/assets/c5853128-5d8d-475d-80eb-1d038c8502ae)
+
