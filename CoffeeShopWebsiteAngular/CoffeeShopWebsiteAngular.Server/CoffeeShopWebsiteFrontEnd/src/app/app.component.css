@@ -1,16 +1,14 @@
 html,
-body{
-    height:100%;
-    margin:0;
-   
+body {
+  height: 100%;
+  margin: 0;
+
 }
 .navbar {
-  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   background-color: #ffffff;
-  z-index: 1000;
 }
 
 .navbar-list {
@@ -48,7 +46,7 @@ body{
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  z-index: 1; /* Lower than the menu button */
+  padding-top: 60px; /* Ensure content isn't hidden behind the navbar */
 }
 .navbar-left,
 .navbar-right {

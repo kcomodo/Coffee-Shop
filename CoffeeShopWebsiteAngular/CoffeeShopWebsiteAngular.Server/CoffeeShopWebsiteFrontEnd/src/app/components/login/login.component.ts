@@ -23,25 +23,24 @@ export class LoginComponent {
 
   constructor(private authService: AuthService, private router: Router, private emailService: EmailServiceService) { }
   onLogin(): void {
-    console.log(this.email, this.password);
+   // console.log(this.email, this.password);
     this.authService.validateLogin(this.email, this.password).subscribe(
       (response) => {
-        console.log(response);
-        console.log(this.email, this.password);
+       // console.log(response);
+       // console.log(this.email, this.password);
         // Handle successful login, e.g., redirect to dashboard
         if (response == true) {
           
           this.authService.GetCustomerId(this.email).subscribe(
             
             userId => {
-              console.log("userid", userId);
+            //  console.log("userid", userId);
               
             });
 
           this.emailService.setEmail(this.email);
-          console.log("Login successful, Email saved:", this.emailService.getEmail());
-          
-         // this.router.navigate(['customer-info']);
+         // console.log("Login successful, Email saved:", this.emailService.getEmail());
+          this.router.navigate(['/home']);
         }
         
       },

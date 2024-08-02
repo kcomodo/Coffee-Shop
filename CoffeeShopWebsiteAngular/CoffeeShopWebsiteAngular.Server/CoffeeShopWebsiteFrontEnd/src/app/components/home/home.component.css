@@ -2,7 +2,7 @@
   position: absolute;
   top: 300px; /* Adjust this value to position vertically */
   left: 50px; /* Adjust this value to position horizontally */
-  z-index: 1010; /* Ensure this is higher than the z-index of the background */
+  z-index: 1; /* Ensure this is higher than the z-index of the background */
   color: white;
   text-indent:15px;
 
@@ -11,8 +11,8 @@
 .menuContainer {
   position: absolute;
   top: 550px; /* Adjust this value to position vertically */
-  left: 50px; /* Adjust this value to position horizontally */
-  z-index: 1010; /* Ensure this is higher than the z-index of the background */
+  left: 100px; /* Adjust this value to position horizontally */
+  z-index: 1; /* Ensure this is higher than the z-index of the background */
   border-radius: 8px;
   padding: 5px;
   display: inline-block;
@@ -38,8 +38,8 @@
 .catalogContainer {
   position: absolute;
   top: 550px; /* Adjust this value to position vertically */
-  left: 210px; /* Adjust this value to position horizontally */
-  z-index: 1010; /* Ensure this is higher than the z-index of the background */
+  left: 290px; /* Adjust this value to position horizontally */
+  z-index: 1; /* Ensure this is higher than the z-index of the background */
   border-radius: 8px;
   padding: 5px;
   display: inline-block;

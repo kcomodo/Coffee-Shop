@@ -1,0 +1,37 @@
+<div class="catalog-container">
+  <div class="catalog">
+    <div class="category">
+      <h2>Coffee</h2>
+      <div class="items">
+        <div class="item" *ngFor="let coffee of coffees">
+          <img [src]="coffee.image" alt="{{ coffee.name }}" />
+          <h3>{{ coffee.name }}</h3>
+          <p>{{ coffee.description }}</p>
+          <p>Price: ${{ coffee.price }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2>Food</h2>
+      <div class="items">
+        <div class="item" *ngFor="let food of foods">
+          <img [src]="food.image" alt="{{ food.name }}" />
+          <h3>{{ food.name }}</h3>
+          <p>{{ food.description }}</p>
+          <p>Price: ${{ food.price }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="category">
+      <h2>Snacks</h2>
+      <div class="items">
+        <div class="item" *ngFor="let snack of snacks">
+          <img [src]="snack.image" alt="{{ snack.name }}" />
+          <h3>{{ snack.name }}</h3>
+          <p>{{ snack.description }}</p>
+          <p>Price: ${{ snack.price }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

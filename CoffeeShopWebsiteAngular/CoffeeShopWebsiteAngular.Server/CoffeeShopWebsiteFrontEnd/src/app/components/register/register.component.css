@@ -11,7 +11,8 @@
   max-width: 400px; /* Limit maximum width */
   margin:auto;
   padding:75px;
-  z-index:1010;
+  z-index:1;
+
 }
 
 .mat-card-content {
