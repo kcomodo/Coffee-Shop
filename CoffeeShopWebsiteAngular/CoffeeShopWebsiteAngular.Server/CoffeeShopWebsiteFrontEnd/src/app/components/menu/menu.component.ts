@@ -7,19 +7,19 @@ import { Component } from '@angular/core';
 })
 export class MenuComponent {
   coffees = [
-    { name: 'Espresso', description: 'Strong and bold', price: 2.5, image: 'espresso.jpg' },
-    { name: 'Latte', description: 'Smooth and creamy', price: 3.0, image: 'latte.jpg' },
-    { name: 'Test', description: 'Testing and testing', price: 5.0, image: 'testing.jpg' },
-    { name: 'Test2', description: 'Testing and testing', price: 5.0, image: 'testing.jpg' },
+    { name: 'Espresso', description: 'Strong and bold', price: 2.5, image: '../assets/images/expresso.jpg' },
+    { name: 'Latte', description: 'Smooth and creamy', price: 3.0, image: '../assets/images/latte2.png' },
+    { name: 'Frappuccino', description: 'Creamy and cold', price: 5.0, image: '../assets/images/frappuccino.png' },
+    { name: 'cappuccino', description: 'Smooth and bold', price: 3, image: '../assets/images/cappuccino.png' },
   ];
   foods = [
-    { name: 'Burger', description: 'Strong and bold', price: 2.5, image: 'espresso.jpg' },
-    { name: 'Stuff', description: 'Smooth and creamy', price: 3.0, image: 'latte.jpg' },
-    { name: 'Yes', description: 'Testing and testing', price: 5.0, image: 'testing.jpg' },
-    { name: 'Okay', description: 'Testing and testing', price: 5.0, image: 'testing.jpg' },
+    { name: 'Egg Sandwich', description: 'Chicken, Egg, and Mapple Butter', price: 2.5, image: 'espresso.jpg' },
+    { name: 'Sausage & Egg Wrap', description: 'Sausage, Chedder, and Egg', price: 3.0, image: 'latte.jpg' },
+    { name: 'Bacon & Egg Sandwich', description: 'Bacon, Gouda, and Egg', price: 5.0, image: 'testing.jpg' },
+    { name: 'Turkey Bacon Sandwich', description: 'Bacon, Egg and Chedder', price: 5.0, image: 'testing.jpg' },
 
   ];
-
+    
   snacks = [
     { name: 'snack1', description: 'Strong and bold', price: 2.5, image: 'espresso.jpg' },
     { name: 'snack2', description: 'Smooth and creamy', price: 3.0, image: 'latte.jpg' },
