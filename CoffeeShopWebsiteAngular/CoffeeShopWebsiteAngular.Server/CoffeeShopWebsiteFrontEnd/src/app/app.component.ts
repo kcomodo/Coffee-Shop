@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from './services/auth.service';
 import { EmailServiceService } from './services/email-service.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,14 +10,14 @@ import { EmailServiceService } from './services/email-service.service';
 })
 export class AppComponent implements OnInit{
   title = 'CoffeeShopWebsiteFrontEnd';
-  constructor(private authService: AuthService, private emailService: EmailServiceService) { }
+  constructor(private authService: AuthService, private emailService: EmailServiceService, private router: Router) { }
   ngOnInit() {
     this.checkLogin();
   }
   checkLogin() {
     if (this.authService.getToken() != null) {
     //  console.log("Token is not null")
-    //  console.log("Token is: ", this.authService.getToken())
+      //  console.log("Token is: ", this.authService.getToken())
       return true;
     }
     else {
