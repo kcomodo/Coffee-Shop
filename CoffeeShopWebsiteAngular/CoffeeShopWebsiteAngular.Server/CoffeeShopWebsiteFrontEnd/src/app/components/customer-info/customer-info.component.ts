@@ -23,22 +23,22 @@ export class CustomerInfoComponent implements OnInit {
   ngOnInit(): void {
     // Perform actions with the token
     const testingtoken = this.authService.getToken();
-    console.log('Token retrieved at info page:', testingtoken);
+   // console.log('Token retrieved at info page:', testingtoken);
     this.Email = this.emailService.getEmail();
-    console.log("Grabbing email:", this.Email);
+   // console.log("Grabbing email:", this.Email);
     if (testingtoken) {
       // Use subscribe to store the info into response as a model or whatever is returned from the server
       this.Email = this.emailService.getEmail();
-      console.log("Grabbing email:", this.Email);
+     // console.log("Grabbing email:", this.Email);
       this.authService.GetCustomerInfo(this.Email).subscribe((response) => {
-        console.log("info: ",response);
+      //  console.log("info: ",response);
         this.FirstName = response.first_name;
         this.LastName = response.last_name;
         this.Email = response.customer_email;
         this.Password = response.customer_password;
         this.PhoneNumber = response.phone_number;
       });
-      console.log("testing email on refresh",this.Email);
+     // console.log("testing email on refresh",this.Email);
     }
 
 

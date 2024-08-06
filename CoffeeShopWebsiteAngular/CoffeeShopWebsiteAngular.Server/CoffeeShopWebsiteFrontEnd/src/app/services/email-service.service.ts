@@ -7,7 +7,7 @@ import { CookieService } from 'ngx-cookie-service';
 export class EmailServiceService {
   constructor(private cookieService: CookieService) { }
   private emailKey = 'userEmail';
-  setEmail(email: string, ) {
+  setEmail(email: string) {
     //this.email = emailGrabbed;
     this.cookieService.set(this.emailKey, email, { path: '/' });
     console.log("Setting email:",email)
