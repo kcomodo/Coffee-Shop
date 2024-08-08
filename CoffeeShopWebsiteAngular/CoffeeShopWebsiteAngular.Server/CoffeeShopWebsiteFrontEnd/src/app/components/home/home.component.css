@@ -10,9 +10,9 @@
 }
 .menuContainer {
   position: absolute;
-  top: 550px; /* Adjust this value to position vertically */
-  left: 100px; /* Adjust this value to position horizontally */
-  z-index: 1; /* Ensure this is higher than the z-index of the background */
+  top: 550px; 
+  left: 100px; 
+  z-index: 1;
   border-radius: 8px;
   padding: 5px;
   display: inline-block;
@@ -37,9 +37,9 @@
 
 .catalogContainer {
   position: absolute;
-  top: 550px; /* Adjust this value to position vertically */
-  left: 290px; /* Adjust this value to position horizontally */
-  z-index: 1; /* Ensure this is higher than the z-index of the background */
+  top: 550px;
+  left: 290px; 
+  z-index: 1; 
   border-radius: 8px;
   padding: 5px;
   display: inline-block;
