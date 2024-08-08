@@ -52,3 +52,54 @@ body {
 .navbar-right {
   display: flex;
 }
+
+
+.about-contact-section {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #ddd;
+  margin-top: 20px;
+  color: black;
+  text-indent: 15px;
+  font: italic bold 20px Georgi a, serif;
+  border: 2px solid #8B4513; 
+  opacity: 0.8; 
+  background-color: #D2B48C;
+}
+
+.about,
+.contact {
+  flex: 1;
+  padding: 10px;
+}
+
+  .about h2,
+  .contact h2 {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #333;
+
+  }
+
+  .about p,
+  .contact p,
+  .contact ul {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #555;
+    line-height: 1.6;
+
+  }
+
+  .contact ul {
+    list-style: none;
+    padding: 0;
+
+  }
+
+  .contact li {
+    margin-bottom: 5px;
+
+  }
