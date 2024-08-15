@@ -2,43 +2,87 @@
 
 
 /* Form styles */
-.registerCard {
-  position: absolute; /* Position absolutely within #container */
-  top: 50%; /* Example centering vertically */
-  left: 50%; /* Example centering horizontally */
-  transform: translate(-50%, -50%);
-  width: 100%; /* Adjust width as needed */
-  max-width: 400px; /* Limit maximum width */
-  margin:auto;
-  padding:75px;
-  z-index:1;
-
-}
-
-.mat-card-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center; /* Center the items horizontally */
-}
-
-.mat-card-actions button {
-  color: white; /* White text */
-  font-size: 18px; /* Increase font size */
-  padding: 10px 20px; /* Add padding */
-  border-radius: 5px; /* Rounded corners */
-  text-align:center; /* Center the text */  
-}
-
-  .mat-card-actions button:hover {
-    background-color: #0000B9; /* Darker green on hover */
+@media(min-width: 1024px) {
+  .registerCard {
+    position: absolute; /* Position absolutely within #container */
+    top: 50%; /* Example centering vertically */
+    left: 50%; /* Example centering horizontally */
+    transform: translate(-50%, -50%);
+    width: 100%; /* Adjust width as needed */
+    max-width: 400px; /* Limit maximum width */
+    margin: auto;
+    padding: 75px;
+    z-index: 1;
   }
 
-.mat-card-actions {
-  display: flex;
-  justify-content: center; /* Center the button horizontally */
+  .mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+  }
+
+  .mat-card-actions button {
+    color: white; /* White text */
+    font-size: 18px; /* Increase font size */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+  }
+
+    .mat-card-actions button:hover {
+      background-color: #0000B9; /* Darker green on hover */
+    }
+
+  .mat-card-actions {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+  }
+
+  button {
+    min-width: 100px;
+    text-align: center;
+    margin: auto;
+  }
 }
-button {
-  min-width: 100px;
-  text-align: center;
-  margin:auto;
+@media(max-width: 375px) {
+  .registerCard {
+    position: absolute; /* Position absolutely within #container */
+    top: 70%; /* Example centering vertically */
+    left: 50%; /* Example centering horizontally */
+    transform: translate(-50%, -50%);
+    width: 100%; /* Adjust width as needed */
+    max-width: 400px; /* Limit maximum width */
+    margin: auto;
+    padding: 75px;
+    z-index: 1;
+  }
+
+  .mat-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the items horizontally */
+  }
+
+  .mat-card-actions button {
+    color: white; /* White text */
+    font-size: 18px; /* Increase font size */
+    padding: 10px 20px; /* Add padding */
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+  }
+
+    .mat-card-actions button:hover {
+      background-color: #0000B9; /* Darker green on hover */
+    }
+
+  .mat-card-actions {
+    display: flex;
+    justify-content: center; /* Center the button horizontally */
+  }
+
+  button {
+    min-width: 100px;
+    text-align: center;
+    margin: auto;
+  }
 }

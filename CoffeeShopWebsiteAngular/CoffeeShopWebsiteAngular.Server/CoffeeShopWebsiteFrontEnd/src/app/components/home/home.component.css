@@ -1,70 +1,141 @@
-.Overview {
-  position: absolute;
-  top: 300px; /* Adjust this value to position vertically */
-  left: 50px; /* Adjust this value to position horizontally */
-  z-index: 1; /* Ensure this is higher than the z-index of the background */
-  color: white;
-  text-indent:15px;
+@media(min-width: 1024px) {
+  .Overview {
+    position: absolute;
+    top: 300px; /* Adjust this value to position vertically */
+    left: 50px; /* Adjust this value to position horizontally */
+    z-index: 1; /* Ensure this is higher than the z-index of the background */
+    color: white;
+    text-indent: 15px;
+  }
+
+  .menuContainer {
+    position: absolute;
+    top: 550px;
+    left: 100px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 5px;
+    display: inline-block;
+    background: #F8E4BE;
+    border-radius: 49px;
+    border: 5px solid #8B4513; /* Set border width and color */
+  }
+
+  .color-button {
+    background-color: #D2B48C;
+    color: #8B4513;
+    border: none;
+    padding: 1px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 49px;
+  }
+
+  .catalogContainer {
+    position: absolute;
+    top: 550px;
+    left: 290px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 5px;
+    display: inline-block;
+    background: #F8E4BE;
+    border-radius: 49px;
+    border: 5px solid #8B4513; /* Set border width and color */
+  }
+
+  .color-button2 {
+    background-color: #D2B48C;
+    color: #8B4513;
+    border: none;
+    padding: 1px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 49px;
+  }
 
 
+  .menuContainer .color-button:hover,
+  .catalogContainer .color-button:hover {
+    background-color: #8B4513; /* Highlight color */
+    color: #F8E4BE; /* Text color when highlighted */
+  }
 }
-.menuContainer {
-  position: absolute;
-  top: 550px; 
-  left: 100px; 
-  z-index: 1;
-  border-radius: 8px;
-  padding: 5px;
-  display: inline-block;
-  background: #F8E4BE;
-  border-radius: 49px;
-  border: 5px solid #8B4513; /* Set border width and color */
-}
+@media(max-width: 375px) {
+  .Overview {
+    position: absolute;
+    top: 150px; /* Adjust this value to position vertically */
+    left: 50px; /* Adjust this value to position horizontally */
+    z-index: 1; /* Ensure this is higher than the z-index of the background */
+    color: white;
+    text-indent: 15px;
+  }
 
-.color-button {
-  background-color: #D2B48C;
-  color: #8B4513;
-  border: none;
-  padding: 1px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 49px;
-}
+  .menuContainer {
+    position: absolute;
+    top: 550px;
+    left: 70px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 5px;
+    display: inline-block;
+    background: #F8E4BE;
+    border-radius: 49px;
+    border: 5px solid #8B4513; /* Set border width and color */
+  }
+  .catalogContainer {
+    position: absolute;
+    top: 550px;
+    left: 200px;
+    z-index: 1;
+    border-radius: 8px;
+    padding: 5px;
+    display: inline-block;
+    background: #F8E4BE;
+    border-radius: 49px;
+    border: 5px solid #8B4513; /* Set border width and color */
+  }
 
-.catalogContainer {
-  position: absolute;
-  top: 550px;
-  left: 290px; 
-  z-index: 1; 
-  border-radius: 8px;
-  padding: 5px;
-  display: inline-block;
-  background: #F8E4BE;
-  border-radius: 49px;
-  border: 5px solid #8B4513; /* Set border width and color */
-}
+  .color-button {
+    background-color: #D2B48C;
+    color: #8B4513;
+    border: none;
+    padding: 1px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 49px;
+  }
 
-.color-button2 {
-  background-color: #D2B48C;
-  color: #8B4513;
-  border: none;
-  padding: 1px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  font-family: Arial, sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
-  border-radius: 49px;
-}
+  .color-button2 {
+    background-color: #D2B48C;
+    color: #8B4513;
+    border: none;
+    padding: 1px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 49px;
+  }
 
 
-.menuContainer .color-button:hover,
-.catalogContainer .color-button:hover {
-  background-color: #8B4513; /* Highlight color */
-  color: #F8E4BE; /* Text color when highlighted */
+  .menuContainer .color-button:hover,
+  .catalogContainer .color-button:hover {
+    background-color: #8B4513; /* Highlight color */
+    color: #F8E4BE; /* Text color when highlighted */
+  }
 }
