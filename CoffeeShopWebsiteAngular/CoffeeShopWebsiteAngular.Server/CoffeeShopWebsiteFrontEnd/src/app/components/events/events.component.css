@@ -1,14 +1,33 @@
-.Overview {
-  position: absolute;
-  top: 20%; /* Adjust this value to position vertically */
-  left: 10%; /* Adjust this value to position horizontally */
-  z-index: 1; /* Ensure this is higher than the z-index of the background */
-  color: black;
-  text-indent: 15px;
-  font:italic bold 20px Georgi  a, serif;
-  
-}
-  .Overview mat-card {
-    border: 2px solid #8B4513; /* Sets the border color and width */
-    opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+@media(min-width: 1024px) {
+  .Overview {
+    position: absolute;
+    top: 20%; /* Adjust this value to position vertically */
+    left: 10%; /* Adjust this value to position horizontally */
+    z-index: 1; /* Ensure this is higher than the z-index of the background */
+    color: black;
+    text-indent: 15px;
+    font: italic bold 20px Georgi a, serif;
   }
+
+    .Overview mat-card {
+      border: 2px solid #8B4513; /* Sets the border color and width */
+      opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+    }
+}
+
+@media(max-width: 375px) {
+  .Overview {
+    position: absolute;
+    top: 20%; /* Adjust this value to position vertically */
+    left: 0%; /* Adjust this value to position horizontally */
+    z-index: 1; /* Ensure this is higher than the z-index of the background */
+    color: black;
+    text-indent: 15px;
+    font: italic bold 20px Georgi a, serif;
+  }
+
+    .Overview mat-card {
+      border: 2px solid #8B4513; /* Sets the border color and width */
+      opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+    }
+}

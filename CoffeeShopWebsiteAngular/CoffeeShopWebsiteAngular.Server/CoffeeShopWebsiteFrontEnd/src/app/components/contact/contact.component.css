@@ -1,44 +1,84 @@
-
-.contact-section {
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-top: 1px solid #ddd;
-  margin-top: 20px;
-  position: absolute;
-  z-index: 1;
-  top: 20%;
-  left: 35%;
-  color: black;
-  text-indent: 15px;
-  font: italic bold 20px Georgi a, serif;
-  border: 2px solid #8B4513; /* Sets the border color and width */
-  opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
-}
-
-  .contact-section h2 {
-    margin-bottom: 10px;
-    font-size: 24px;
-    color: #333;
-
-  }
-
-  .contact-section p,
-  .contact-section ul {
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #555;
-    line-height: 1.6;
-
-  }
-
-  .contact-section ul {
-    list-style: none;
-    padding: 0;
-
-  }
-
-  .contact-section li {
-    margin-bottom: 5px;
+@media(min-width: 1024px) {
+  .contact-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-top: 1px solid #ddd;
+    margin-top: 20px;
+    position: absolute;
+    z-index: 1;
+    top: 20%;
+    left: 35%;
+    color: black;
+    text-indent: 15px;
+    font: italic bold 20px Georgi a, serif;
     border: 2px solid #8B4513; /* Sets the border color and width */
     opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+  }
+
+    .contact-section h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .contact-section p,
+    .contact-section ul {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .contact-section ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .contact-section li {
+      margin-bottom: 5px;
+      border: 2px solid #8B4513; /* Sets the border color and width */
+      opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+    }
+}
+  @media(max-width: 375px) {
+    .contact-section {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
+      margin-top: 20px;
+      position: absolute;
+      z-index: 1;
+      top: 20%;
+      left: 0%;
+      color: black;
+      text-indent: 15px;
+      font: italic bold 20px Georgi a, serif;
+      border: 2px solid #8B4513; /* Sets the border color and width */
+      opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+    }
+
+      .contact-section h2 {
+        margin-bottom: 10px;
+        font-size: 24px;
+        color: #333;
+      }
+
+      .contact-section p,
+      .contact-section ul {
+        margin-bottom: 10px;
+        font-size: 16px;
+        color: #555;
+        line-height: 1.6;
+      }
+
+      .contact-section ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .contact-section li {
+        margin-bottom: 5px;
+        border: 2px solid #8B4513; /* Sets the border color and width */
+        opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+      }
   }
