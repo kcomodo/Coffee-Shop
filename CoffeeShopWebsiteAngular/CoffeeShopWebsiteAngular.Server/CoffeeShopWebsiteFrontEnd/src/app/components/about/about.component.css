@@ -1,4 +1,4 @@
-@media(min-width: 1024px) {
+@media(min-width: 1025px) {
   .about {
     padding: 20px;
     background-color: #f9f9f9;
@@ -29,9 +29,7 @@
   }
 }
 
-
-
-@media(max-width: 375px) {
+@media(max-width: 1024px) {
   .about {
     padding: 20px;
     background-color: #f9f9f9;
@@ -61,3 +59,34 @@
     line-height: 1.6;
   }
 }
+
+  @media(max-width: 768px) {
+    .about {
+      padding: 20px;
+      background-color: #f9f9f9;
+      border-top: 1px solid #ddd;
+      margin-top: 20px;
+      position: absolute;
+      top: 20%;
+      z-index: 1;
+      left: 0%;
+      color: black;
+      text-indent: 15px;
+      font: italic bold 20px Georgi a, serif;
+      border: 2px solid #8B4513; /* Sets the border color and width */
+      opacity: 0.8; /* Adjust the opacity value between 0 and 1 */
+    }
+
+    .about-section h2 {
+      margin-bottom: 10px;
+      font-size: 24px;
+      color: #333;
+    }
+
+    .about-section p {
+      margin-bottom: 10px;
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+    }
+  }

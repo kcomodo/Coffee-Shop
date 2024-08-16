@@ -44,7 +44,7 @@
     margin: auto;
   }
 }
-@media(max-width: 375px) {
+@media(max-width: 425px) {
   .registerCard {
     position: absolute; /* Position absolutely within #container */
     top: 70%; /* Example centering vertically */
