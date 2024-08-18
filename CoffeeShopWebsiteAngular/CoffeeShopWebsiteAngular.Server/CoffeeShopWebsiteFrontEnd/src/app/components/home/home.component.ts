@@ -14,11 +14,11 @@ export class HomeComponent implements OnInit{
 
     this.breakpointObserver.observe(customBreakpoints).subscribe((state: BreakpointState) => {
       if (state.breakpoints[customBreakpoints[0]]) {
-        console.log('Mobile view');
+       // console.log('Mobile view');
       } else if (state.breakpoints[customBreakpoints[1]]) {
-        console.log('Tablet View');
+      //  console.log('Tablet View');
       } else if (state.breakpoints[customBreakpoints[2]]) {
-        console.log('Desktop View');
+     //   console.log('Desktop View');
       }
     });
 

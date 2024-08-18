@@ -27,3 +27,6 @@ button {
   margin: 15px;
 }
 
+.error-message {
+  color: red;
+}

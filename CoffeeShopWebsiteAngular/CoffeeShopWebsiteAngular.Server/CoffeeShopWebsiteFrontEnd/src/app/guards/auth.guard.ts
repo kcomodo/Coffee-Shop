@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate{
   constructor(private authService: AuthService, private router: Router) { }
   canActivate(): boolean{
     if (this.authService.isLoggedIn()) {
-      console.log("auth.guard.ts is true, will re-route now")
+     // console.log("auth.guard.ts is true, will re-route now")
      // this.router.navigate(['/customer-info']);
       return true;
     }
@@ -20,7 +20,7 @@ export class AuthGuard implements CanActivate{
     }
 
     else {
-      console.log("auth.guard.ts is false, will stay on login")
+    //  console.log("auth.guard.ts is false, will stay on login")
      // this.router.navigate(['/login']);
       return false;
     }

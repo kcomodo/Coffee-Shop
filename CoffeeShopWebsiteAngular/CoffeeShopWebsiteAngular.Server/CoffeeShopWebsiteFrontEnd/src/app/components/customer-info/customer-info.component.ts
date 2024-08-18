@@ -14,6 +14,8 @@ export class CustomerInfoComponent implements OnInit {
   Email: string = '';
   Password: string = '';
   PhoneNumber: string = '';
+  isEditMode: boolean = false;
+
   constructor(
     private authService: AuthService,
     private router: Router,
@@ -42,6 +44,10 @@ export class CustomerInfoComponent implements OnInit {
     }
 
 
+  }
+  toggleEditMode() {
+    this.isEditMode = !this.isEditMode;
+    //console.log("Edit clicked: ", this.isEditMode);
   }
 }
   
