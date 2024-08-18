@@ -4,8 +4,13 @@
   </div>
   <div id="container">
     <form class="example-form" (ngSubmit)="onLogin()">
+
       <mat-card class="LoginCard" appearance="outlined">
+
         <mat-card-content>
+          <div *ngIf="errorMessage" class="error-message">
+            {{ errorMessage }}
+          </div>
           <div class="emailDiv">
             <mat-form-field appearance="fill">
               <mat-label>Email</mat-label>
@@ -31,6 +36,7 @@
               <mat-error *ngIf="passwordFormControl.hasError('required')">Password is required</mat-error>
             </mat-form-field>
           </div>
+
         </mat-card-content>
         <mat-card-actions>
           <button mat-raised-button color="primary" type="submit">Login</button>

@@ -21,7 +21,7 @@ export class AuthService implements OnInit{
   ngOnInit() {
     if(this.getToken() != null){
       this.isAuthenticated = true;
-      console.log("the token is true, will stay on customer info page: ", this.isAuthenticated);
+     // console.log("the token is true, will stay on customer info page: ", this.isAuthenticated);
     }
   }
   //Call the controller methods from asp.net

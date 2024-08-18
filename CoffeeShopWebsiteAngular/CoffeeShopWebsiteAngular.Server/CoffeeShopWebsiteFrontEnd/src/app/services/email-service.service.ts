@@ -10,7 +10,7 @@ export class EmailServiceService {
   setEmail(email: string) {
     //this.email = emailGrabbed;
     this.cookieService.set(this.emailKey, email, { path: '/' });
-    console.log("Setting email:",email)
+   // console.log("Setting email:",email)
   }
   getEmail() {
     return this.cookieService.get(this.emailKey);

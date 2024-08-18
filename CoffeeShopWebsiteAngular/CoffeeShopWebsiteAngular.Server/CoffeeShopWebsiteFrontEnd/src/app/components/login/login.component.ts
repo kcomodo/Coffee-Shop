@@ -16,6 +16,7 @@ import { Token } from '@angular/compiler';
 export class LoginComponent {
   email: string = '';
   password: string = '';
+  errorMessage: string = '';
 
 
   emailFormControl = new FormControl('', [Validators.required, Validators.email]);
@@ -45,8 +46,9 @@ export class LoginComponent {
         
       },
       (error) => {
-        console.error('Login failed', error);
+        //console.error('Login failed', error);
         // Handle login error, e.g., display error message
+        this.errorMessage = 'Invalid Username or Password';
 
 
       }
