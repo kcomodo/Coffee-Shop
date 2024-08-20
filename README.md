@@ -1,4 +1,4 @@
-# CoffeeShop WIP
+# CoffeeShop - COMPLETED
 ### Front-end using AngularJS
 ![image](https://github.com/user-attachments/assets/5dc8b56e-c03f-46c1-a365-198e55b784c1)
 
