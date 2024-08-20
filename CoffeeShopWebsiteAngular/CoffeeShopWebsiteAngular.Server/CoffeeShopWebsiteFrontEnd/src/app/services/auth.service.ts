@@ -95,6 +95,11 @@ export class AuthService implements OnInit{
     });
     return this.http.get<any>(`${this.baseUrl}/GetCustomerByEmail?email=${email}`, { headers });
   }
+
+  //https://localhost:7059/UpdateCustomer?firstname=UpdatedName&lastname=UpdatedLast&email=JohnDoe%40gmail.com&phone=00001234&password=55532
+  UpdateCustomerInfo(updatedInfo: any): Observable<any> {
+    return this.http.get<any>(`${this.baseUrl}/UpdateCustomer?firstname=${updatedInfo.first_name}&lastname=${updatedInfo.last_name}&email=${updatedInfo.customer_email}&phone=${updatedInfo.phone_number}&password=${updatedInfo.customer_password}`);
+  }
   //created a method to check if the user is logged in
   isLoggedIn(): boolean {
   //  console.log("isLoggedin received: ", this.isAuthenticated);

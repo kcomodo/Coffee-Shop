@@ -1,10 +1,41 @@
 <mat-card class="LoginCard" appearance="outlined">
   <mat-card-content>
-    <p>First Name: {{ FirstName }}</p>
-    <p>Last Name: {{LastName}}</p>
-    <p>Email: {{Email}}</p>
-    <p>Password: {{Password}}</p>
-    <p>Phone Number: {{PhoneNumber}}</p>
-    <button mat-raised-button color="primary" (click)="toggleEditMode()">Edit</button>
+    <div *ngIf="!isEditMode">
+      <p>First Name: {{ FirstName }}</p>
+      <p>Last Name: {{LastName}}</p>
+      <p>Email: {{Email}}</p>
+      <p>Password: {{Password}}</p>
+      <p>Phone Number: {{PhoneNumber}}</p>
+      <button mat-raised-button color="primary" (click)="toggleEditMode()">Edit</button>
+    </div>
+    <div *ngIf="isEditMode">
+      <mat-form-field>
+        <mat-label>First Name</mat-label>
+        <input matInput [(ngModel)]="FirstName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Last Name</mat-label>
+        <input matInput [(ngModel)]="LastName">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput [(ngModel)]="Email">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput [(ngModel)]="Password" type="password">
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input matInput [(ngModel)]="PhoneNumber">
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" (click)="saveChanges()">Save</button>
+      <button mat-raised-button color="warn" (click)="toggleEditMode()">Cancel</button>
+    </div>
   </mat-card-content>
 </mat-card>
