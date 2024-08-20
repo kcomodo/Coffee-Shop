@@ -16,6 +16,12 @@
 ### A catalog for displaying the menu
 ![image](https://github.com/user-attachments/assets/6586fede-7a1b-4fed-ba83-f9c83934e00e)
 
+### About Us section
+![image](https://github.com/user-attachments/assets/8720ec89-ab36-4210-9335-a0e49ee2649d)
+
+### Event Section
+![image](https://github.com/user-attachments/assets/18ace92c-9964-4b74-ae34-68dae052cdd8)
+
 ### Small info section at the bottom of the page
 ![image](https://github.com/user-attachments/assets/bc023f82-cd92-4017-8a60-562ef077b894)
 
