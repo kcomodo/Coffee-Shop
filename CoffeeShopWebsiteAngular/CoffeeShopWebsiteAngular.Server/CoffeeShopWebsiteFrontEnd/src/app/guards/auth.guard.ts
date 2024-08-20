@@ -10,11 +10,13 @@ export const authGuard: CanActivateFn = (route, state) => {
 export class AuthGuard implements CanActivate{
   constructor(private authService: AuthService, private router: Router) { }
   canActivate(): boolean{
+    //guard to check if the user is logged in
     if (this.authService.isLoggedIn()) {
      // console.log("auth.guard.ts is true, will re-route now")
      // this.router.navigate(['/customer-info']);
       return true;
     }
+    //can also check if there is a token for user
     else if (this.authService.getToken() != null) {
       return true;
     }

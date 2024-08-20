@@ -50,6 +50,7 @@ export class CustomerInfoComponent implements OnInit {
     //console.log("Edit clicked: ", this.isEditMode);
   }
   saveChanges() {
+    //Store the info into a model and send it to the server
     const updatedInfo = {
       first_name: this.FirstName,
       last_name: this.LastName,
@@ -57,11 +58,12 @@ export class CustomerInfoComponent implements OnInit {
       customer_password: this.Password,
       phone_number: this.PhoneNumber,
     };
+    //Call the service to update the info
     this.authService.UpdateCustomerInfo(updatedInfo).subscribe((response) => {
       // console.log("Response from update: ", response);
       this.toggleEditMode();
     }, (error) => {
-      console.error('Failed to update customer info:', error);
+      //console.error('Failed to update customer info:', error);
     });
 
   }

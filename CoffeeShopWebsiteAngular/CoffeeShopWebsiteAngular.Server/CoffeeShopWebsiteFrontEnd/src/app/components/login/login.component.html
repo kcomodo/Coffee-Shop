@@ -3,7 +3,7 @@
   <div class="contact-info">
   </div>
   <div id="container">
-    <form class="example-form" (ngSubmit)="onLogin()">
+    <form class="example-form" (ngSubmit)="onLogin()"> <!-- When submit, call the method called onLogin()-->
 
       <mat-card class="LoginCard" appearance="outlined">
 
@@ -14,12 +14,13 @@
           <div class="emailDiv">
             <mat-form-field appearance="fill">
               <mat-label>Email</mat-label>
+              <!-- value is binded to the ngModel called "email" -->
               <input type="email"
                      placeholder="Type your email"
                      name="emailInput"
                      [(ngModel)]="email"
                      matInput
-                     [formControl]="emailFormControl">
+                     [formControl]="emailFormControl"> <!--Form control is a built in function that error checks for emails and password-->
               <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">Please enter a valid email address</mat-error>
               <mat-error *ngIf="emailFormControl.hasError('required')">Email is required</mat-error>
             </mat-form-field>
@@ -30,7 +31,7 @@
               <input type="password"
                      placeholder="Type your password"
                      name="passwordInput"
-                     [(ngModel)]="password"
+                     [(ngModel)]="password" 
                      matInput
                      [formControl]="passwordFormControl">
               <mat-error *ngIf="passwordFormControl.hasError('required')">Password is required</mat-error>

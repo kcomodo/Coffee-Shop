@@ -4,6 +4,9 @@ import { CookieService } from 'ngx-cookie-service';
 @Injectable({
   providedIn: 'root'
 })
+//Email-service has 3 functions, one to set the email into the cookie storage
+//one to get the email from the cookie storage
+//and one to delete the email
 export class EmailServiceService {
   constructor(private cookieService: CookieService) { }
   private emailKey = 'userEmail';
