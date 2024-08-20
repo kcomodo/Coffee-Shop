@@ -23,6 +23,10 @@ export class LoginComponent {
   passwordFormControl = new FormControl('', [Validators.required]);
 
   constructor(private authService: AuthService, private router: Router, private emailService: EmailServiceService) { }
+  //When onLogin is called, it will grab the email and password and send it to the validateLogin method in the auth service
+  //Response will be the answered recieved from the api
+  //Once the login is valid, we will use the email to grab the customer id, this is just for testing
+  //We will also save the email by calling the email service
   onLogin(): void {
    // console.log(this.email, this.password);
     this.authService.validateLogin(this.email, this.password).subscribe(
