@@ -98,7 +98,8 @@ export class AuthService implements OnInit{
 
   //https://localhost:7059/UpdateCustomer?firstname=UpdatedName&lastname=UpdatedLast&email=JohnDoe%40gmail.com&phone=00001234&password=55532
   UpdateCustomerInfo(updatedInfo: any): Observable<any> {
-    return this.http.get<any>(`${this.baseUrl}/UpdateCustomer?firstname=${updatedInfo.first_name}&lastname=${updatedInfo.last_name}&email=${updatedInfo.customer_email}&phone=${updatedInfo.phone_number}&password=${updatedInfo.customer_password}`);
+    const body = { };
+    return this.http.put<any>(`${this.baseUrl}/UpdateCustomer?firstname=${updatedInfo.first_name}&lastname=${updatedInfo.last_name}&email=${updatedInfo.customer_email}&phone=${updatedInfo.phone_number}&password=${updatedInfo.customer_password}`, body);
   }
   //created a method to check if the user is logged in
   isLoggedIn(): boolean {
@@ -107,7 +108,7 @@ export class AuthService implements OnInit{
   }
   //created a method to log out the user
   
-  logout(): void {
+  logout(): void {  
     this.isAuthenticated = false;
     this.token = null;
     this.cookieService.delete(this.tokenSaved, '/'); // Remove the token cookie

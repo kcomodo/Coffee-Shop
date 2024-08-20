@@ -1,7 +1,43 @@
-.LoginCard{
-    position:absolute;
-    z-index:1;
-    position:absolute;
-    left:50%;
-    top:40%;
+@media(min-width: 1025px) {
+  .LoginCard {
+    position: absolute;
+    z-index: 1;
+    left: 15%;
+    top: 30%;
+  }
+}
+/* Mobile Small (up to 320px) */
+@media(max-width: 320px) {
+  .LoginCard {
+    position: absolute;
+    z-index: 1;
+    left: 0%;
+    top: 30%;
+  }
+}
+/* Mobile Medium (321px to 480px) */
+@media (min-width: 321px) and (max-width: 480px) {
+  .LoginCard {
+    position: absolute;
+    z-index: 1;
+    left: 0%;
+    top: 30%;
+  }
+}
+@media (min-width: 481px) and (max-width: 768px) {
+  .LoginCard {
+    position: absolute;
+    z-index: 1;
+    left: 0%;
+    top: 30%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .LoginCard {
+    position: absolute;
+    z-index: 1;
+    left: 0%;
+    top: 30%;
+  }
 }
