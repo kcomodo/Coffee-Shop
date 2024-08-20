@@ -57,9 +57,14 @@ export class CustomerInfoComponent implements OnInit {
       customer_password: this.Password,
       phone_number: this.PhoneNumber,
     };
-  //  this.authService.UpdateCustomerInfo(updatedInfo).subscribe((response) => {
+    this.authService.UpdateCustomerInfo(updatedInfo).subscribe((response) => {
+      // console.log("Response from update: ", response);
+      this.toggleEditMode();
+    }, (error) => {
+      console.error('Failed to update customer info:', error);
+    });
+
   }
 }
-  
   
 
