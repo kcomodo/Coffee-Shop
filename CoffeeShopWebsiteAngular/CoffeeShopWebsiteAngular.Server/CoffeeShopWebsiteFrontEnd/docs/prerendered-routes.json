@@ -1,0 +1,12 @@
+{
+  "routes": [
+    "/about",
+    "/contact",
+    "/customer-info",
+    "/events",
+    "/home",
+    "/login",
+    "/menu",
+    "/register"
+  ]
+}
